@@ -9,15 +9,19 @@ public class Bullet : MonoBehaviour, BulletInterface {
 
 	// Use this for initialization
 	void Start () {
-		this.Speed = .2f;
-		this.Going = false;
+
+        this.GetComponent<Rigidbody>().AddForce(this.transform.right * 500f);
 	}
 
 	public void OnShoot(Vector2 direc) {
 		this.Direction = direc;
 		this.Going = true;
 	}
-	
+
+    public void OnCollisionEnter2D(Collision2D coll)
+    {
+        ;
+    }
 	// Update is called once per frame
 	void Update () {
 		Debug.Log ("I GOT TO HERE");
