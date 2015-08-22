@@ -46,7 +46,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	{
 	}
 	
-	public void OnTriggerEnter2D(Collider2D coll)
+	public virtual void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "endwall") {
 			Destroy (this.gameObject);

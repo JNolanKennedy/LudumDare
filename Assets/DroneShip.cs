@@ -1,22 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DroneShip : MonoBehaviour, ShipInterface {
-
-    public AudioClip Explosion;
-
-    //Hull Points
-    private int HP;
-    //Shield
-    private int Shield;
-    //Ship Speed
-    private float Speed;
-    //Position on the ship the parastite shows up on (0,0) is upper left
-    private Vector2 AttachPoint;
-    private AudioSource source;
+public class DroneShip : BaseShip {
     GameObject player;
     private bool Shooting;
-    public GameObject Bullet;
+	public GameObject Bullet;
 
     // Use this for initialization   
     void Start()
@@ -30,13 +18,12 @@ public class DroneShip : MonoBehaviour, ShipInterface {
         player = GameObject.Find("Player");
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
 
         if (!this.Shooting)
         {
             this.Shooting = true;
-            Debug.Log("test");
             Speed = 0;
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
             droneattack BI = clone.GetComponent<droneattack>();
@@ -50,13 +37,13 @@ public class DroneShip : MonoBehaviour, ShipInterface {
         Shooting = false;
     }
 
-    public void Move(Vector2 Direction)
+    public override void Move(Vector2 Direction)
     {
         //Takes the direction, multiplies by speed
         this.transform.position += (float)this.Speed * (Vector3)Direction;
     }
 
-    public bool TakeDamage(int val)
+    public override bool TakeDamage(int val)
     {
         if (this.Shield <= 0)
         {
@@ -80,32 +67,15 @@ public class DroneShip : MonoBehaviour, ShipInterface {
         return false;
     }
 
-    public void OnDeath()
-    {
-        Debug.Log("test");
-        //Change Animation to EXPLOSION!!!!
-        this.HP = 0;
-        this.source.PlayOneShot(Explosion, 1);
-    }
-
-    public void Upgrade()
-    {
-    }
-
-    public int getShields()
-    {
-        return this.Shield;
-    }
-
-    public void OnTriggerEnter2D(Collider2D coll)
+    public override void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "PlayerShip")
         {
-            this.OnDeath();
+            OnDeath();
         }
         else if (coll.tag == "boundwall")
         {
-            this.OnDeath();
+            OnDeath();
         }
     }
 }
