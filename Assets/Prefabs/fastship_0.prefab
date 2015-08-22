@@ -1,44 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &109322
+--- !u!1 &148572
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 476732}
-  - 212: {fileID: 21245838}
-  - 95: {fileID: 9502512}
+  - 4: {fileID: 474704}
+  - 212: {fileID: 21238974}
+  - 95: {fileID: 9518562}
   m_Layer: 0
-  m_Name: droneship
+  m_Name: fastship_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &476732
+--- !u!4 &474704
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109322}
+  m_GameObject: {fileID: 148572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.01999998, y: 1.65999997, z: 0}
+  m_LocalPosition: {x: -5.56455231, y: -.671248376, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!95 &9502512
+--- !u!95 &9518562
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109322}
+  m_GameObject: {fileID: 148572}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3bc66b4ba9e4b447a34bcf9a4e2424b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 18688e15b2439224d8677cc4d88932a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -46,12 +46,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &21245838
+--- !u!212 &21238974
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109322}
+  m_GameObject: {fileID: 148572}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c4e95048ec726f4699fee3794521840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cafd8801d151ba4885da9b52b6c980d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -82,8 +82,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b3bc66b4ba9e4b447a34bcf9a4e2424b, type: 2}
+      objectReference: {fileID: 9100000, guid: 18688e15b2439224d8677cc4d88932a2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 109322}
+  m_RootGameObject: {fileID: 148572}
   m_IsPrefabParent: 1
