@@ -2,32 +2,28 @@
 using System.Collections;
 using System;
 
-public class Electroball : MonoBehaviour, BulletInterface
-{
+public class droneattack : MonoBehaviour {
 
     public AudioClip shootSound;
 
-    private float Speed;
-    private Vector2 Direction;
     private int Damage;
     private AudioSource source;
     private string Shooter;
     private string Foe;
+    private float time = 1f;
+    GameObject drone;
 
     // Use this for initialization
     void Start()
     {
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;
-        this.Speed = 300f;
         this.source.PlayOneShot(shootSound, 1);
-        this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
-
     }
 
-    public void OnShoot(Vector2 direc, string shooter)
+    public void OnShoot(GameObject d, string shooter)
     {
-        this.Direction = direc;
+        drone = d;
         this.Shooter = shooter;
         if (this.Shooter == "PlayerShip")
         {
@@ -45,16 +41,26 @@ public class Electroball : MonoBehaviour, BulletInterface
         {
             ShipInterface enem = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
             enem.TakeDamage(this.Damage);
+            drone.GetComponent<DroneShipAI>().setCooldown();
+            drone.GetComponent<DroneShip>().setSpeed();
             Destroy(this.gameObject);
         }
         else if (coll.gameObject.tag == "endwall")
         {
+            drone.GetComponent<DroneShipAI>().setCooldown();
+            drone.GetComponent<DroneShip>().setSpeed();
             Destroy(this.gameObject);
         }
     }
     // Update is called once per frame
     void Update()
     {
-        ;
+        time -= Time.deltaTime;
+        if (time <= 0)
+        {
+            drone.GetComponent<DroneShipAI>().setCooldown();
+            drone.GetComponent<DroneShip>().setSpeed();
+            Destroy(gameObject);
+        }
     }
 }
