@@ -21,7 +21,7 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 		this.HP = 3;
 		this.Shield = 1;
 		this.Speed = .2f;
-		this.Damage = 2;
+		//this.Damage = 2;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;
 	}
@@ -31,6 +31,8 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 		if (!this.Shooting) {
 			this.Shooting = true;
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
+			BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
+			BI.OnShoot(Vector2.right);
 			this.Shooting = false;
 		}
 	}
