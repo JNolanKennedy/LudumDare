@@ -75,7 +75,9 @@ public class FastShip : MonoBehaviour, ShipInterface
 
 	public void OnTriggerEnter2D(Collider2D coll)
 	{
-		//Take Damage and do any other cleaning up
+		if (coll.gameObject.tag == "endwall") {
+			Destroy (this.gameObject);
+		}
 	}
 }
 
