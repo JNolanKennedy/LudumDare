@@ -63,7 +63,8 @@ public class Parasite : MonoBehaviour, ShipInterface {
 		//remove the AI controller on the ship
 		Destroy (ship.GetComponent (typeof(AI)));
 		//Flip the ship 180
-		ship.transform.Rotate (new Vector3 (0, 0, 180));
+		ship.transform.rotation = this.transform.rotation;
+		ship.GetComponent<BoxCollider2D> ().isTrigger = false;
 		//Set the player to control this new ship now.
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		player.GetComponent<PlayerScript>().SetNewShip(ship);
