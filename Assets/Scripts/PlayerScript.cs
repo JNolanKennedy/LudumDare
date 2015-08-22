@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public GameObject myShip;
 	ShipInterface currentShip;
+	private bool changing = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +27,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void SetNewShip(GameObject ship) {
+		this.myShip = ship;
 		myShip.tag = "PlayerShip";
-		currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
+		this.currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 	}
 }

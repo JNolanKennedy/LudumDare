@@ -17,7 +17,7 @@ public class FastShip : MonoBehaviour, ShipInterface
 	// Use this for initialization
 	void Start () {
 		this.HP = 3;
-		this.Shield = 1;
+		this.Shield = 0;
 		this.Speed = .2f;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;

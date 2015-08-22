@@ -10,31 +10,19 @@ public class FastShipAI : MonoBehaviour, AI {
 	// Use this for initialization
 	void Start () {
         currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
-        if (this.transform.parent != null)
-        {
-            isPlayer = true;
-        }
-        else
-        {
-            this.transform.Rotate(Vector3.forward * 180);
-            player = GameObject.Find("Player").transform.GetChild(0);
-        }
-        
+        this.transform.Rotate(Vector3.forward * 180); 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (isPlayer == false)
+		player = GameObject.FindGameObjectWithTag ("PlayerShip").transform;
+        AdjustPosition();
+        if(cooldown <= 0)
         {
-            AdjustPosition();
-            if(cooldown <= 0)
-            {
-                currentShip.Shoot();
-                cooldown = .3f;
-            }
-            cooldown = cooldown - Time.deltaTime;
-            
-        }   
+            currentShip.Shoot();
+            cooldown = .3f;
+        }
+        cooldown = cooldown - Time.deltaTime; 
 	}
 
     private void AdjustPosition()
