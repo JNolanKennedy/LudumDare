@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FastShip : MonoBehaviour, ShipInterface
 {
+	public AudioClip Explosion;
+
 	//Hull Points
 	private int HP;
 	//Shield
@@ -13,6 +15,7 @@ public class FastShip : MonoBehaviour, ShipInterface
 	public GameObject Bullet;
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	private Vector2 AttachPoint;
+	private AudioSource source;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,7 @@ public class FastShip : MonoBehaviour, ShipInterface
 		this.Speed = .2f;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;
+		this.source = this.GetComponent<AudioSource>();
 	}
 	
 	public void Shoot()
@@ -62,6 +66,10 @@ public class FastShip : MonoBehaviour, ShipInterface
 	{
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
+		this.source.PlayOneShot(Explosion, 1);
+		this.GetComponent<Animator> ().CrossFade ("death", .05f);
+		this.GetComponent<BoxCollider2D> ().enabled = false;
+		Destroy(this.gameObject, 1f);
 	}
 	
 	public void Upgrade()

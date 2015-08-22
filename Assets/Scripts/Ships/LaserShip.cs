@@ -63,7 +63,9 @@ public class LaserShip : MonoBehaviour, ShipInterface
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
 		this.source.PlayOneShot(Explosion, 1);
-		this.GetComponent<Animator> ().CrossFade ("death", 1);
+		this.GetComponent<Animator> ().CrossFade ("death", .05f);
+		this.GetComponent<BoxCollider2D> ().enabled = false;
+		Destroy(this.gameObject, 1f);
 	}
 	
 	public void Upgrade()
