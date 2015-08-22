@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
 
 	public GameObject myShip;
 	ShipInterface currentShip;
