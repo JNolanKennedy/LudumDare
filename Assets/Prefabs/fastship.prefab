@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 474704}
   - 212: {fileID: 21238974}
   - 95: {fileID: 9518562}
+  - 114: {fileID: 11497176}
   m_Layer: 0
   m_Name: fastship
   m_TagString: Untagged
@@ -46,6 +47,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11497176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfca8d80add48f64e888912323667a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 169514, guid: 8fc380fda6a6c7d42a74008ab434b3a7, type: 2}
 --- !u!212 &21238974
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -83,6 +96,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 18688e15b2439224d8677cc4d88932a2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 169514, guid: 8fc380fda6a6c7d42a74008ab434b3a7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148572}

@@ -21,8 +21,8 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 		this.HP = 3;
 		this.Shield = 1;
 		this.Speed = .2f;
-		this.Damage = 2;
-		this.AttachPoint = new Vector2(0, 3);
+		//this.Damage = 2;
+		//this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;
 	}
 	
@@ -31,11 +31,11 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 		if (!this.Shooting) {
 			this.Shooting = true;
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			Rigidbody rb = clone.GetComponent(typeof(Rigidbody)) as Rigidbody;
-			rb.AddForce(this.transform.forward*5f);
+			//Rigidbody rb = clone.GetComponent(typeof(Rigidbody)) as Rigidbody;
+			//rb.AddForce(this.transform.right*400f);
 
-			//BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
-			//BI.OnShoot((Vector2)this.transform.forward);
+			BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
+			BI.OnShoot((Vector2)this.transform.right);
 		}
 	}
 	
