@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11449218}
   m_Layer: 0
   m_Name: electroship
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,10 @@ Prefab:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 137398, guid: bf83e41faf4a710498b6a35c8abde8a7, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101424}

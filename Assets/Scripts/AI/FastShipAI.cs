@@ -3,7 +3,6 @@ using System.Collections;
 
 public class FastShipAI : MonoBehaviour, AI {
     ShipInterface currentShip;
-    bool isPlayer = false;
     Transform player;
     float cooldown = .3f;
 

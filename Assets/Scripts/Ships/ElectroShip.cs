@@ -17,11 +17,11 @@ public class ElectroShip : MonoBehaviour, ShipInterface {
     private bool Shooting;
     public GameObject Bullet;
 
-	// Use this for initialization
+	// Use this for initialization   
 	void Start () {
 		this.HP = 3;
 		this.Shield = 3;
-		this.Speed = .1f;
+        this.Speed = .1f;
 		this.AttachPoint = new Vector2(0, 3);
         this.Shooting = false;
 		this.source = this.GetComponent<AudioSource>();
@@ -49,6 +49,7 @@ public class ElectroShip : MonoBehaviour, ShipInterface {
 	public bool TakeDamage(int val)
 	{
 		if (this.Shield <= 0) {
+            Speed = 0;
 			this.Shield = 0;
 			if (this.HP > 0) {
 				this.HP -= val;
@@ -83,7 +84,7 @@ public class ElectroShip : MonoBehaviour, ShipInterface {
 
 	public void OnTriggerEnter2D(Collider2D coll)
 	{
-        if (coll.gameObject == player.GetComponent<PlayerScript>().myShip)
+        if (coll.tag == "PlayerShip")
         {
             this.OnDeath();
         }
