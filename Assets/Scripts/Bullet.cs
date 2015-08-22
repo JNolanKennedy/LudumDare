@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour, BulletInterface {
 			BehaviorInterface enem = coll.gameObject.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
 			enem.TakeDamage (this.Damage);
 			Destroy (this.gameObject);
-		} else if (coll.gameObject.tag != this.Shooter) {
+		} else if (coll.gameObject.tag == "endwall") {
 			Destroy (this.gameObject);
 		}
     }
