@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StarShip : MonoBehaviour, ShipInterface
+public class StarShip : BaseShip
 {
     //Hull Points
     private int HP;
@@ -27,61 +27,8 @@ public class StarShip : MonoBehaviour, ShipInterface
         this.Shooting = false;
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
         ;
-    }
-
-    public void Move(Vector2 Direction)
-    {
-        //Takes the direction, multiplies by speed
-        this.transform.position += (float)this.Speed * (Vector3)Direction;
-    }
-
-    public bool TakeDamage(int val)
-    {
-        if (this.Shield <= 0)
-        {
-            this.Shield = 0;
-            if (this.HP > 0)
-            {
-                this.HP -= val;
-            }
-        }
-        else
-        {
-            this.Shield -= val;
-        }
-
-        if (this.Shield <= 0)
-        {
-            OnDeath();
-            return true;
-        }
-        return false;
-    }
-
-    public void OnDeath()
-    {
-        //Change Animation to EXPLOSION!!!!
-        this.HP = 0;
-    }
-
-    public void Infect()
-    {
-    }
-
-    public void Upgrade()
-    {
-    }
-
-    public int getShields()
-    {
-        return this.Shield;
-    }
-
-    public void OnTriggerEnter2D(Collider2D coll)
-    {
-        Debug.Log("TESt");
     }
 }

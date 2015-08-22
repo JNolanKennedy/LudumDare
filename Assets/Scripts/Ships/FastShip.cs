@@ -26,9 +26,5 @@ public class FastShip : BaseShip
 			this.Shooting = false;
 		}
 	}
-	
-	public void Upgrade()
-	{
-	}
 }
 
