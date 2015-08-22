@@ -1,18 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FastShip : MonoBehaviour, ShipInterface
+public class FastShip : BaseShip
 {
-	//Hull Points
-	private int HP;
-	//Shield
-	private int Shield;
-	//Ship Speed
-	private float Speed;
 	private bool Shooting;
 	public GameObject Bullet;
-	//Position on the ship the parastite shows up on (0,0) is upper left
-	private Vector2 AttachPoint;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,9 +13,10 @@ public class FastShip : MonoBehaviour, ShipInterface
 		this.Speed = .2f;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;
+		this.source = this.GetComponent<AudioSource>();
 	}
 	
-	public void Shoot()
+	public override void Shoot()
 	{
 		if (!this.Shooting) {
 			this.Shooting = true;
@@ -31,52 +24,6 @@ public class FastShip : MonoBehaviour, ShipInterface
 			BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
 			BI.OnShoot(transform.right, this.tag);
 			this.Shooting = false;
-		}
-	}
-	
-	public void Move(Vector2 Direction)
-	{
-		//Takes the direction, multiplies by speed
-		this.transform.position += (float)this.Speed * (Vector3)Direction;
-	}
-	
-	public bool TakeDamage(int val)
-	{
-		if (this.Shield <= 0) {
-			this.Shield = 0;
-			if (this.HP > 0) {
-				this.HP -= val;
-			}
-		} else {
-			this.Shield -= val;
-		}
-		
-		if (this.Shield <= 0) {
-			OnDeath();
-			return true;
-		}
-		return false;
-	}
-	
-	public void OnDeath()
-	{
-		//Change Animation to EXPLOSION!!!!
-		this.HP = 0;
-	}
-	
-	public void Upgrade()
-	{
-	}
-
-	public int getShields() 
-	{
-		return this.Shield;
-	}
-
-	public void OnTriggerEnter2D(Collider2D coll)
-	{
-		if (coll.gameObject.tag == "endwall") {
-			Destroy (this.gameObject);
 		}
 	}
 }
