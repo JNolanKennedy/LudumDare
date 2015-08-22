@@ -352,6 +352,10 @@ Prefab:
       propertyPath: m_Name
       value: lasersihp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 145690, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
   m_IsPrefabParent: 0
@@ -392,7 +396,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 145690, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
       propertyPath: m_TagString
@@ -793,7 +797,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2025683263}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: .5, y: 0}
   serializedVersion: 2
