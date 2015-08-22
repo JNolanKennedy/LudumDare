@@ -69,6 +69,7 @@ public class FastShip : MonoBehaviour, ShipInterface
 		this.source.PlayOneShot(Explosion, 1);
 		this.GetComponent<Animator> ().CrossFade ("death", .05f);
 		this.GetComponent<BoxCollider2D> ().enabled = false;
+		Destroy(this.GetComponent(typeof(AI)));
 		Destroy(this.gameObject, 1f);
 	}
 	
