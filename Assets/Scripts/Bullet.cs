@@ -13,9 +13,10 @@ public class Bullet : MonoBehaviour, BulletInterface {
 	// Use this for initialization
 	void Start () {
 		this.source = this.GetComponent<AudioSource>();
+		this.Damage = 1;
 		this.Speed = 500f;
 		this.source.PlayOneShot (shootSound, 1);
-		this.GetComponent<Rigidbody>().AddForce(this.Direction * this.Speed);
+		this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
 
 	}
 
@@ -25,7 +26,14 @@ public class Bullet : MonoBehaviour, BulletInterface {
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
-        ;
+        if (coll.gameObject.tag == "Enemy") {
+			BehaviorInterface enem = coll.gameObject.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
+			enem.TakeDamage (this.Damage);
+			Destroy (this);
+		} else {
+			Debug.Log("HERE");
+			Destroy (this);
+		}
     }
 	// Update is called once per frame
 	void Update () {

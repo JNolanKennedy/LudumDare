@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		myShip.tag = "PlayerShip";
 		currentShip = myShip.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
 	}
 	

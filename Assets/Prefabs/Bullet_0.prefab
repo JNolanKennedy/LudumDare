@@ -11,8 +11,9 @@ GameObject:
   - 212: {fileID: 21284580}
   - 95: {fileID: 9503306}
   - 114: {fileID: 11417610}
-  - 54: {fileID: 5481980}
   - 82: {fileID: 8278854}
+  - 50: {fileID: 5027494}
+  - 61: {fileID: 6185630}
   m_Layer: 0
   m_Name: Bullet_0
   m_TagString: Untagged
@@ -32,21 +33,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!54 &5481980
-Rigidbody:
+--- !u!50 &5027494
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169514}
-  serializedVersion: 2
   m_Mass: .5
-  m_Drag: 0
-  m_AngularDrag: .100000001
-  m_UseGravity: 0
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+--- !u!61 &6185630
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169514}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .25, y: .25}
 --- !u!82 &8278854
 AudioSource:
   m_ObjectHideFlags: 1
@@ -196,6 +211,14 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 00811968ebfb41344a8b49f2bc767d18, type: 3}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
