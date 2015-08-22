@@ -70,4 +70,9 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 	public void Upgrade()
 	{
 	}
+
+	public void OnCollisionEnter2D(Collision2D coll)
+	{
+		//Do damage here
+	}
 }

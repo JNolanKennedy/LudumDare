@@ -76,5 +76,10 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 	public void Upgrade()
 	{
 	}
+
+	public void OnCollisionEnter2D(Collision2D coll)
+	{
+		//Take Damage and do any other cleaning up
+	}
 }
 

@@ -9,4 +9,5 @@ public interface BehaviorInterface
 	void OnDeath();
 	void Infect();
 	void Upgrade();
+	void OnCollisionEnter2D(Collision2D coll);
 }
