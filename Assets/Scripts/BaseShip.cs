@@ -11,34 +11,38 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected int Shield;
 	//Ship Speed
 	protected float Speed;
-	protected int Charge;
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	protected Vector2 AttachPoint;
 	protected AudioSource source;
-	
-	public void Shoot()
+
+	void Start()
 	{
-		this.Charge += (int)Time.deltaTime;
-		if (this.Charge >= 2) {
-			this.Charge = 0;
-		}
+		;
 	}
 	
-	public void Move(Vector2 Direction)
+	public virtual void Shoot()
+	{
+		;
+	}
+	
+	public virtual void Move(Vector2 Direction)
 	{
 		//Takes the direction, multiplies by speed
 		this.transform.position += (float)this.Speed * (Vector3)Direction;
 	}
 	
-	public void OnDeath()
+	public virtual void OnDeath()
 	{
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
 		this.source.PlayOneShot(Explosion, 1);
-		this.GetComponent<Animator> ().CrossFade ("death", 1);
+		this.GetComponent<Animator> ().CrossFade ("death", .05f);
+		this.GetComponent<BoxCollider2D> ().enabled = false;
+		Destroy(this.GetComponent(typeof(AI)));
+		Destroy(this.gameObject, 1f);
 	}
 	
-	public void Upgrade()
+	public virtual void Upgrade()
 	{
 	}
 	
@@ -49,7 +53,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		}
 	}
 
-	public bool TakeDamage(int val)
+	public virtual bool TakeDamage(int val)
 	{
 		if (this.Shield <= 0) {
 			this.Shield = 0;
@@ -60,14 +64,14 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 			this.Shield -= val;
 		}
 		
-		if (this.Shield <= 0) {
+		if (this.HP <= 0) {
 			OnDeath();
 			return true;
 		}
 		return false;
 	}
 
-	public int getShields() 
+	public virtual int getShields() 
 	{
 		return this.Shield;
 	}
