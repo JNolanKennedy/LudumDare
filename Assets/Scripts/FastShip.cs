@@ -33,6 +33,7 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
 			Rigidbody rb = clone.GetComponent(typeof(Rigidbody)) as Rigidbody;
 			rb.AddForce(this.transform.forward*5f);
+            this.Shooting = false;
 
 			//BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
 			//BI.OnShoot((Vector2)this.transform.forward);
