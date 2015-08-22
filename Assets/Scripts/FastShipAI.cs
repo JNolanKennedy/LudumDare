@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class FastShipAI : MonoBehaviour, AI {
-    BehaviorInterface currentShip;
+    ShipInterface currentShip;
     bool isPlayer = false;
     Transform player;
     float cooldown = .3f;
 
 	// Use this for initialization
 	void Start () {
-        currentShip = this.GetComponent(typeof(BehaviorInterface)) as BehaviorInterface;
+        currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
         if (this.transform.parent != null)
         {
             isPlayer = true;
