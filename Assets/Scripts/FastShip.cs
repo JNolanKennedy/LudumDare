@@ -32,7 +32,7 @@ public class FastShip : MonoBehaviour, BehaviorInterface
 			this.Shooting = true;
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
 			BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
-			BI.OnShoot(Vector2.right);
+			BI.OnShoot(Vector2.right, this.tag);
 			this.Shooting = false;
 		}
 	}
