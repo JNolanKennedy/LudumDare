@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: 2cdbf5dca7f69b948a6648ec1bdc23aa
-timeCreated: 1440277499
+guid: 811078d09a6ef044583f81a1bb643faa
+timeCreated: 1440279557
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: electroship_0
-    21300002: electroship_1
+    21300000: electroball_0
+    21300002: electroball_1
+    21300004: electroball_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -51,23 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: electroship_0
+    - name: electroball_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: electroship_1
+    - name: electroball_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electroball_2
       rect:
         serializedVersion: 2
         x: 16
         y: 0
-        width: 16
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
