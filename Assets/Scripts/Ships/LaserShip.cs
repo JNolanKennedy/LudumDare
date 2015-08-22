@@ -76,6 +76,8 @@ public class LaserShip : MonoBehaviour, ShipInterface
 
 	public void OnTriggerEnter2D(Collider2D coll)
 	{
-		//Do damage here
+		if (coll.gameObject.tag == "endwall") {
+			Destroy (this.gameObject);
+		}
 	}
 }
