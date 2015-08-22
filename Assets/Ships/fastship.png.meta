@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 067f71370e6c89c43afb5e7c46fc9f13
-timeCreated: 1440210983
+guid: 0cafd8801d151ba4885da9b52b6c980d
+timeCreated: 1440212787
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: shipb_0
-    21300002: shipb_1
-    21300004: shipb_2
+    21300000: fastship_0
+    21300002: fastship_1
+    21300004: fastship_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,7 +52,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: shipb_0
+    - name: fastship_0
       rect:
         serializedVersion: 2
         x: 0
@@ -62,7 +62,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: shipb_1
+    - name: fastship_1
       rect:
         serializedVersion: 2
         x: 8
@@ -72,7 +72,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: shipb_2
+    - name: fastship_2
       rect:
         serializedVersion: 2
         x: 16
