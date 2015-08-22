@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	public GameObject myShip;
+	public GameObject paraShip;
 	ShipInterface currentShip;
 	private bool changing = false;
 
@@ -20,9 +21,13 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Jump")) 
-		{
+		if (Input.GetButtonDown ("Jump")) {
 			currentShip.Shoot ();
+		} else if (Input.GetButtonDown ("Eject") && !this.currentShip.getIsParasite()) {
+			GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;
+			currentShip.OnDeath();
+			myShip = newPara;
+			currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 		}
 	}
 

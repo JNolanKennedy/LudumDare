@@ -10,4 +10,5 @@ public interface ShipInterface
 	void Upgrade();
 	int getShields();
 	void OnTriggerEnter2D(Collider2D coll);
+	bool getIsParasite();
 }

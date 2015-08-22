@@ -14,6 +14,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	protected Vector2 AttachPoint;
 	protected AudioSource source;
+	protected bool isParasite = false;
 
 	void Start()
 	{
@@ -46,7 +47,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	{
 	}
 	
-	public void OnTriggerEnter2D(Collider2D coll)
+	public virtual void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "endwall") {
 			Destroy (this.gameObject);
@@ -74,5 +75,10 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public virtual int getShields() 
 	{
 		return this.Shield;
+	}
+
+	public bool getIsParasite()
+	{
+		return this.isParasite;
 	}
 }

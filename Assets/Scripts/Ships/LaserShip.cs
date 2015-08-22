@@ -15,7 +15,7 @@ public class LaserShip : BaseShip
 		this.source = this.GetComponent<AudioSource>();
 	}
 
-	public void Shoot()
+	public override void Shoot()
 	{
 		this.Charge += (int)Time.deltaTime;
 		if (this.Charge >= 2) {
