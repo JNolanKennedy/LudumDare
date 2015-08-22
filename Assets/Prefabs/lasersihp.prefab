@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11470306}
   - 82: {fileID: 8291082}
   - 61: {fileID: 6170184}
+  - 114: {fileID: 11437474}
   m_Layer: 0
   m_Name: lasersihp
   m_TagString: Enemy
@@ -56,7 +57,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .00300000003
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -131,6 +132,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11437474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96369c0bf33a784fac5f232f1411d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11470306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 145690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99f3af0e40c8fb4291627593fe6ef8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dd3658097d0168479fe15e7ca4e5ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 8300000, guid: 80e00071296404c478e3c48aecde563b, type: 3}
@@ -195,6 +207,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: .00300000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
