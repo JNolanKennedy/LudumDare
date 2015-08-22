@@ -13,11 +13,15 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		currentShip.Move(new Vector2(Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical")));
+	void FixedUpdate () {
+		currentShip.Move (new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical")));
+	}
 
-		if (Input.GetButtonDown ("Jump")) {
-			currentShip.Shoot();
+	void Update ()
+	{
+		if (Input.GetButtonDown ("Jump")) 
+		{
+			currentShip.Shoot ();
 		}
 	}
 }
