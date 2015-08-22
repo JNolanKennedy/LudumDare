@@ -15,7 +15,6 @@ public class BackgroundScroll : MonoBehaviour
 
     void Update()
     {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
-        transform.position = startPosition + new Vector3(-newPosition,0,0);
+		gameObject.GetComponent<MeshRenderer>().material.mainTextureOffset = new Vector2 (-(Time.time * scrollSpeed)%1, 0f);
     }
 }
