@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour, BulletInterface {
 		this.Damage = 1;
 		this.Speed = 500f;
 		this.source.PlayOneShot (shootSound, 1);
-        Debug.Log(Direction);
 		this.GetComponent<Rigidbody2D>().AddForce(this.transform.right * this.Speed);
 
 	}

@@ -66,9 +66,9 @@ public class Parasite : MonoBehaviour, ShipInterface {
 		ship.transform.Rotate (new Vector3 (0, 0, 180));
 		//Set the player to control this new ship now.
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-		//player.GetComponent<PlayerScript>().setNewShip(ship);
+		player.GetComponent<PlayerScript>().SetNewShip(ship);
 		//Delete your current ship, the infection guy.
-
+		Destroy (this.gameObject);
 	}
 	
 	public void Upgrade()

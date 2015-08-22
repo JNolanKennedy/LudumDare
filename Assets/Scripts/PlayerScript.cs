@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
-	void SetNewShip(GameObject ship) {
+	public void SetNewShip(GameObject ship) {
 		myShip.tag = "PlayerShip";
 		currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 	}
