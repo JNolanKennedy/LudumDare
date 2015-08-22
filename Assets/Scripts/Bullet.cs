@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Bullet : MonoBehaviour, BulletInterface {
 
@@ -9,6 +10,8 @@ public class Bullet : MonoBehaviour, BulletInterface {
 	private Vector2 Direction;
 	private int Damage;
 	private AudioSource source;
+	private string Shooter;
+	private string Foe;
 
 	// Use this for initialization
 	void Start () {
@@ -20,19 +23,25 @@ public class Bullet : MonoBehaviour, BulletInterface {
 
 	}
 
-	public void OnShoot(Vector2 direc) {
+	public void OnShoot(Vector2 direc, string shooter) {
 		this.Direction = direc;
+		this.Shooter = shooter;
+		if (this.Shooter == "PlayerShip") {
+			this.Foe = "Enemy";
+		} else {
+			this.Foe = "PlayerShip";
+		}
 	}
 
-    public void OnCollisionEnter2D(Collision2D coll)
+    public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Enemy") {
+        if (String.Equals(coll.gameObject.tag,this.Foe)) {
+			Debug.Log("HERE: " + this.Foe);
 			BehaviorInterface enem = coll.gameObject.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
 			enem.TakeDamage (this.Damage);
-			Destroy (this);
-		} else {
-			Debug.Log("HERE");
-			Destroy (this);
+			Destroy (this.gameObject);
+		} else if (coll.gameObject.tag != this.Shooter) {
+			Destroy (this.gameObject);
 		}
     }
 	// Update is called once per frame

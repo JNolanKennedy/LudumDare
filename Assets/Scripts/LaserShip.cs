@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LaserShip : MonoBehaviour, BehaviorInterface
 {
+	public AudioClip Explosion;
+
 	//Hull Points
 	private int HP;
 	//Shield
@@ -14,6 +16,7 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 	private int Charge;
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	private Vector2 AttachPoint;
+	private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +26,7 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 		this.Damage = 2;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Charge = 0;
+		this.source = this.GetComponent<AudioSource>();
 	}
 
 	public void Shoot()
@@ -50,8 +54,8 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 			this.Shield -= val;
 		}
 
-		if (this.Shield <= 0) {
-			OnDeath();
+		if (this.HP <= 0) {
+			this.OnDeath();
 			return true;
 		}
 		return false;
@@ -59,8 +63,10 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 
 	public void OnDeath()
 	{
+		Debug.Log("TakingDamage" + HP);
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
+		this.source.PlayOneShot (Explosion, 1);
 	}
 
 	public void Infect()
