@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class BasicAIBehavior : MonoBehaviour, AI {
-	BehaviorInterface currentShip;
+	ShipInterface currentShip;
 
 	// Use this for initialization
 	void Start () {
-		currentShip = this.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
+		currentShip = this.GetComponent (typeof(ShipInterface)) as ShipInterface;
 		this.transform.Rotate (Vector3.forward * 180);
 	
 	}

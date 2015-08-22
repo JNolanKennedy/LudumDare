@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LaserShip : MonoBehaviour, BehaviorInterface
+public class LaserShip : MonoBehaviour, ShipInterface
 {
 	public AudioClip Explosion;
 
@@ -11,8 +11,6 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 	private int Shield;
 	//Ship Speed
 	private float Speed;
-	//Damage the ship can do
-	private int Damage;
 	private int Charge;
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	private Vector2 AttachPoint;
@@ -23,7 +21,6 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 		this.HP = 3;
 		this.Shield = 1;
 		this.Speed = .1f;
-		this.Damage = 2;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Charge = 0;
 		this.source = this.GetComponent<AudioSource>();
@@ -63,21 +60,21 @@ public class LaserShip : MonoBehaviour, BehaviorInterface
 
 	public void OnDeath()
 	{
-		Debug.Log("TakingDamage" + HP);
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
 		this.source.PlayOneShot (Explosion, 1);
 	}
-
-	public void Infect()
-	{
-	}
-
+	
 	public void Upgrade()
 	{
 	}
 
-	public void OnCollisionEnter2D(Collision2D coll)
+	public int getShields() 
+	{
+		return this.Shield;
+	}
+
+	public void OnTriggerEnter2D(Collider2D coll)
 	{
 		//Do damage here
 	}

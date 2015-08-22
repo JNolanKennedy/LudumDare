@@ -4,12 +4,12 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public GameObject myShip;
-	BehaviorInterface currentShip;
+	ShipInterface currentShip;
 
 	// Use this for initialization
 	void Start () {
 		myShip.tag = "PlayerShip";
-		currentShip = myShip.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
+		currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 	}
 	
 	// Update is called once per frame
@@ -23,5 +23,10 @@ public class Player : MonoBehaviour {
 		{
 			currentShip.Shoot ();
 		}
+	}
+
+	void SetNewShip(GameObject ship) {
+		myShip.tag = "PlayerShip";
+		currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 	}
 }

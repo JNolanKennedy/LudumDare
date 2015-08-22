@@ -1,37 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class FastShip : MonoBehaviour, ShipInterface
-{
+public class Parasite : MonoBehaviour, ShipInterface {
+
 	//Hull Points
 	private int HP;
 	//Shield
 	private int Shield;
 	//Ship Speed
 	private float Speed;
-	private bool Shooting;
 	public GameObject Bullet;
 	//Position on the ship the parastite shows up on (0,0) is upper left
 	private Vector2 AttachPoint;
 	
 	// Use this for initialization
 	void Start () {
-		this.HP = 3;
-		this.Shield = 1;
-		this.Speed = .2f;
+		this.HP = 1;
+		this.Shield = 0;
+		this.Speed = .1f;
 		this.AttachPoint = new Vector2(0, 3);
-		this.Shooting = false;
 	}
-	
+
 	public void Shoot()
 	{
-		if (!this.Shooting) {
-			this.Shooting = true;
-			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			BulletInterface BI = clone.GetComponent (typeof(BulletInterface)) as BulletInterface;
-			BI.OnShoot(Vector2.right, this.tag);
-			this.Shooting = false;
-		}
+		;//The parasite cannot shoot!
 	}
 	
 	public void Move(Vector2 Direction)
@@ -42,6 +35,7 @@ public class FastShip : MonoBehaviour, ShipInterface
 	
 	public bool TakeDamage(int val)
 	{
+		//Techincally has no shields, but we'll leave this for now.
 		if (this.Shield <= 0) {
 			this.Shield = 0;
 			if (this.HP > 0) {
@@ -64,18 +58,38 @@ public class FastShip : MonoBehaviour, ShipInterface
 		this.HP = 0;
 	}
 	
+	void Infect(GameObject ship, ShipInterface enem)
+	{
+		//remove the AI controller on the ship
+		Destroy (ship.GetComponent (typeof(AI)));
+		//Flip the ship 180
+		ship.transform.Rotate (new Vector3 (0, 0, 180));
+		//Set the player to control this new ship now.
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		//player.GetComponent<PlayerScript>().setNewShip(ship);
+		//Delete your current ship, the infection guy.
+
+	}
+	
 	public void Upgrade()
 	{
 	}
 
 	public int getShields() 
 	{
-		return this.Shield;
+		return 0;
 	}
-
+	
 	public void OnTriggerEnter2D(Collider2D coll)
 	{
-		//Take Damage and do any other cleaning up
+		if (String.Equals (coll.gameObject.tag, "Enemy")) {
+			ShipInterface enem = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			if (enem.getShields() > 0) {
+				this.OnDeath();
+			}
+			else {
+				this.Infect(coll.gameObject, enem);
+			}
+		}
 	}
 }
-

@@ -36,8 +36,7 @@ public class Bullet : MonoBehaviour, BulletInterface {
     public void OnTriggerEnter2D(Collider2D coll)
     {
         if (String.Equals(coll.gameObject.tag,this.Foe)) {
-			Debug.Log("HERE: " + this.Foe);
-			BehaviorInterface enem = coll.gameObject.GetComponent (typeof(BehaviorInterface)) as BehaviorInterface;
+			ShipInterface enem = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
 			enem.TakeDamage (this.Damage);
 			Destroy (this.gameObject);
 		} else if (coll.gameObject.tag == "endwall") {
