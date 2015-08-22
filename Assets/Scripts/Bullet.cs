@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour, BulletInterface {
 		this.Damage = 1;
 		this.Speed = 500f;
 		this.source.PlayOneShot (shootSound, 1);
-		this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
+        Debug.Log(Direction);
+		this.GetComponent<Rigidbody2D>().AddForce(this.transform.right * this.Speed);
 
 	}
 
@@ -37,5 +38,6 @@ public class Bullet : MonoBehaviour, BulletInterface {
     }
 	// Update is called once per frame
 	void Update () {
+
 	}
 }
