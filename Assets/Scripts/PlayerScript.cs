@@ -26,8 +26,7 @@ public class PlayerScript : MonoBehaviour {
 		} else if (Input.GetButtonDown ("Eject") && !this.currentShip.getIsParasite()) {
 			GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;
 			currentShip.OnDeath();
-			myShip = newPara;
-			currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			this.SetNewShip(newPara);
 		}
 	}
 

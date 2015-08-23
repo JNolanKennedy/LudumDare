@@ -28,7 +28,7 @@ public class DroneShip : BaseShip {
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
 			BulletClass BI = clone.GetComponent (typeof(BulletClass)) as BulletClass;
 			BI.OnShoot(this.tag);
-			this.time = 5f;
+			this.time = 2.5f;
         }
 
     }
@@ -41,21 +41,17 @@ public class DroneShip : BaseShip {
 
     public override void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "PlayerShip")
-        {
-            OnDeath();
-        }
-        else if (coll.tag == "boundwall")
-        {
-            OnDeath();
-        }
+		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
+			ShipInterface si = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			si.TakeDamage(1);
+		}
     }
 
 	void Update()
 	{
 		if (this.time > 0)
 			this.time -= Time.deltaTime;
-		if (this.time < 4 && this.time > 3) {
+		if (this.time < 1 && this.time > 0) {
 			this.setSpeed ();
 			this.Shooting = false;
 		}

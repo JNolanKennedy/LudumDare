@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5038498}
   - 82: {fileID: 8258938}
   m_Layer: 0
-  m_Name: para_0
+  m_Name: Parasite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
