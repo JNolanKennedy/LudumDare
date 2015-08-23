@@ -5,7 +5,7 @@ using System;
 public class Parasite : BaseShip {
 	
 	// Use this for initialization
-	void Start () {
+	public override void overrideStart () {
 		this.HP = 100;
 		this.Shield = 0;
 		this.Speed = .1f;

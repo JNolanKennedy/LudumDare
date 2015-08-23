@@ -7,7 +7,7 @@ public class StarShipAI : AI {
     Transform player;
 
     // Update is called once per frame
-    void Update()
+	public override void overrideUpdate()
     {
         player = GameObject.FindGameObjectWithTag("PlayerShip").transform;
         AdjustPosition();

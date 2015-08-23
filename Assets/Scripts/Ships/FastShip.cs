@@ -21,7 +21,7 @@ public class FastShip : BaseShip
 		if (!this.Shooting) {
 			this.Shooting = true;
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			BulletClass BI = clone.GetComponent (typeof(BulletClass)) as BulletClass;
+			BaseBullet BI = clone.GetComponent (typeof(BaseBullet)) as BaseBullet;
 			BI.OnShoot(transform.right, this.tag);
 			this.Shooting = false;
 		}
