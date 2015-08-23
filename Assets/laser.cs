@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
-public class laser : BulletClass {
+public class laser : BaseBullet {
 
     private float Speed;
     private float time;

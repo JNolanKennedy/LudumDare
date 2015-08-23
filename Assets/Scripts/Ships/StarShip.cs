@@ -10,10 +10,10 @@ public class StarShip : BaseShip
 	public override void overrideStart()
     {
         this.HP = 3;
-        this.Shield = 1;
+        this.Shield = 0;
         this.Speed = .05f;
         //this.Damage = 2;
-        this.AttachPoint = new Vector2(0, 3);
+        this.AttachPoint = new Vector3(-.4f,-.04f, -1);
 		this.source = this.GetComponent<AudioSource>();
     }
 

@@ -6,7 +6,7 @@ public class DroneShipAI : AI {
     float cooldown = 1f;
 		
     // Update is called once per frame
-    void Update()
+	public override void overrideUpdate()
     {
 		AdjustPosition ();
 		if (cooldown <= 0) {

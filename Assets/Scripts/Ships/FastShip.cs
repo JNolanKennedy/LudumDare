@@ -11,7 +11,7 @@ public class FastShip : BaseShip
 		this.HP = 3;
 		this.Shield = 0;
 		this.Speed = .2f;
-		this.AttachPoint = new Vector2(0, 3);
+		this.AttachPoint = new Vector3(-.4f, -.05f, -1);
 		this.Shooting = false;
 		this.source = this.GetComponent<AudioSource>();
 	}
@@ -21,7 +21,7 @@ public class FastShip : BaseShip
 		if (!this.Shooting) {
 			this.Shooting = true;
 			GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			BulletClass BI = clone.GetComponent (typeof(BulletClass)) as BulletClass;
+			BaseBullet BI = clone.GetComponent (typeof(BaseBullet)) as BaseBullet;
 			BI.OnShoot(transform.right, this.tag);
 			this.Shooting = false;
 		}

@@ -5,7 +5,7 @@ using System;
 public class Parasite : BaseShip {
 	
 	// Use this for initialization
-	void Start () {
+	public override void overrideStart () {
 		this.HP = 100;
 		this.Shield = 0;
 		this.Speed = .1f;
@@ -30,7 +30,12 @@ public class Parasite : BaseShip {
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		player.GetComponent<PlayerScript>().SetNewShip(ship);
 		//Delete your current ship, the infection guy.
-		Destroy (this.gameObject);
+        this.transform.SetParent(ship.transform);
+        this.transform.localPosition = (ship.GetComponent((typeof(BaseShip))) as BaseShip).getAttachPoint();
+        Debug.Log((ship.GetComponent((typeof(BaseShip))) as BaseShip).getAttachPoint());
+        this.tag = "Untagged";
+        this.GetComponent<BoxCollider2D>().enabled = false;
+		//Destroy (this.gameObject);
 	}
 	
 	public override void OnTriggerEnter2D(Collider2D coll)

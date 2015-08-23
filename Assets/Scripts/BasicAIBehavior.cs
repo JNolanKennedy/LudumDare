@@ -9,7 +9,7 @@ public class BasicAIBehavior : AI {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public override void overrideUpdate() {
 		currentShip.Move (new Vector2(-1, 0));
 	
 	}

@@ -4,6 +4,7 @@ using System.Collections;
 public class AI: MonoBehaviour
 {
 	protected ShipInterface currentShip;
+	protected bool pause = false;
 	public void Start()
 	{
 		currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
@@ -16,6 +17,17 @@ public class AI: MonoBehaviour
 
 	}
 
+	public void Update()
+	{
+		if (!pause)
+			overrideUpdate ();
+	}
+
+	public virtual void overrideUpdate()
+	{
+
+	}
+
 	private void registerSelf()
 	{
 
@@ -24,5 +36,13 @@ public class AI: MonoBehaviour
 	private void OnDestroy()
 	{
 		//deregs self
+	}
+
+	private void PauseHandler()
+	{
+		if (pause == false)
+			pause = true;
+		else
+			pause = false;
 	}
 }

@@ -12,7 +12,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	//Ship Speed
 	protected float Speed;
 	//Position on the ship the parastite shows up on (0,0) is upper left
-	protected Vector2 AttachPoint;
+	protected Vector3 AttachPoint;
 	protected AudioSource source;
 	protected bool isParasite = false;
 	protected float invincablity;
@@ -43,6 +43,16 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	}
 	//This is the function you override by default for your own method calls during start
 	public virtual void overrideStart()
+	{
+
+	}
+
+	void Update()
+	{
+		overrideUpdate ();
+	}
+
+	public virtual void overrideUpdate()
 	{
 
 	}
@@ -129,6 +139,11 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		return false;
 	}
 
+    public virtual Vector3 getAttachPoint()
+    {
+        return AttachPoint;
+    }
+
 	public virtual int getShields() 
 	{
 		return this.Shield;
@@ -146,13 +161,14 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	private void registerSelf()
 	{
-
+		GameObject.Find ("GameManager").GetComponent<PauseManager> ().registerObject (this.gameObject);
 	}
 
 	private void onDestroy()
 	{
-		//deregs self
+
 	}
+
 	private void setupBars()
 	{
 
@@ -172,5 +188,9 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 			this.GetComponent<SpriteRenderer>().color = Color.white;
 			this.invincablity -= Time.deltaTime;
 		}
+
+	private void PauseHandler()
+	{
+
 	}
 }

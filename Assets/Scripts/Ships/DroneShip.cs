@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DroneShip : BaseShip {
@@ -13,7 +13,7 @@ public class DroneShip : BaseShip {
         this.HP = 1;
         this.Shield = 1;
         this.Speed = .1f;
-        this.AttachPoint = new Vector2(0, 3);
+        this.AttachPoint = new Vector3(-.5f, -.4f, -1);
         this.Shooting = false;
         this.source = this.GetComponent<AudioSource>();
         player = GameObject.Find("Player");
@@ -26,7 +26,7 @@ public class DroneShip : BaseShip {
             this.Shooting = true;
             Speed = 0;
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			BulletClass BI = clone.GetComponent (typeof(BulletClass)) as BulletClass;
+			BaseBullet BI = clone.GetComponent (typeof(BaseBullet)) as BaseBullet;
 			BI.OnShoot(this.tag);
 			this.time = 2.5f;
         }
@@ -38,12 +38,9 @@ public class DroneShip : BaseShip {
         Shooting = false;
     }
 
-    public override void OnTriggerEnter2D(Collider2D coll)
+    public override void overrideOnTriggerEnter2D(Collider2D coll)
     {
-		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
-			ShipInterface si = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
-			si.TakeDamage(1);
-		}
+
     }
 
 	public override void overrideUpdate()
