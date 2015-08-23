@@ -3,11 +3,11 @@ using System.Collections;
 
 public class shieldbar : MonoBehaviour {
 
-    float fullShield;
-    float curShield;
+    public float fullShield;
+    public float curShield;
 	public BaseShip myShip;
 
-    public void start()
+    public void Start()
     {
         myShip = this.GetComponentInParent((typeof(BaseShip))) as BaseShip;
         fullShield = myShip.getShields();
@@ -16,7 +16,9 @@ public class shieldbar : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        curShield = myShip.getShields();
-        transform.localScale = new Vector3((curShield / fullShield), 1, 1);
+		if (fullShield != 0) {
+			curShield = myShip.getShields ();
+			transform.localScale = new Vector3 ((curShield / fullShield), 1, 1);
+		}
     }
 }

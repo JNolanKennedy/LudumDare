@@ -30,7 +30,6 @@ public class DroneShip : BaseShip {
 			BI.OnShoot(this.tag);
 			this.time = 2.5f;
         }
-
     }
 
     public void setSpeed()

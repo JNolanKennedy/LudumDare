@@ -7,7 +7,7 @@ public class healthbar : MonoBehaviour {
 
 	private BaseShip myShip;
 
-    public void start()
+    public void Start()
     {
 
         this.myShip = this.GetComponentInParent((typeof(BaseShip))) as BaseShip;
