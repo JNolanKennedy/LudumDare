@@ -13,7 +13,7 @@ public class DroneShip : BaseShip {
         this.HP = 1;
         this.Shield = 1;
         this.Speed = .1f;
-        this.AttachPoint = new Vector2(0, 3);
+        this.AttachPoint = new Vector3(-.5f, -.4f, -1);
         this.Shooting = false;
         this.source = this.GetComponent<AudioSource>();
         player = GameObject.Find("Player");

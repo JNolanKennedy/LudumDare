@@ -12,7 +12,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	//Ship Speed
 	protected float Speed;
 	//Position on the ship the parastite shows up on (0,0) is upper left
-	protected Vector2 AttachPoint;
+	protected Vector3 AttachPoint;
 	protected AudioSource source;
 	protected bool isParasite = false;
 
@@ -108,6 +108,11 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		}
 		return false;
 	}
+
+    public virtual Vector3 getAttachPoint()
+    {
+        return AttachPoint;
+    }
 
 	public virtual int getShields() 
 	{

@@ -11,9 +11,9 @@ public class ElectroShip : BaseShip
 	// Use this for initialization
 	public override void overrideStart() {
 		this.HP = 3;
-		this.Shield = 3;
-		this.Speed = .1f;
-		this.AttachPoint = new Vector2(0, 3);
+        this.Shield = 3;
+        this.Speed = .1f;
+		this.AttachPoint = new Vector3(-1, -.05f, -1);
         this.Shooting = false;
 		this.source = this.GetComponent<AudioSource>();
         this.player = GameObject.Find("Player");
@@ -30,6 +30,30 @@ public class ElectroShip : BaseShip
             this.Shooting = false;
         }
 	}
+
+    public override bool TakeDamage(int val)
+    {
+        if (this.Shield <= 0)
+        {
+            this.Shield = 0;
+            Speed = 0;
+            if (this.HP > 0)
+            {
+                this.HP -= val;
+            }
+        }
+        else
+        {
+            this.Shield -= val;
+        }
+
+        if (this.HP <= 0)
+        {
+            OnDeath();
+            return true;
+        }
+        return false;
+    }
 
 	public override void overrideOnTriggerEnter2D(Collider2D coll)
 	{

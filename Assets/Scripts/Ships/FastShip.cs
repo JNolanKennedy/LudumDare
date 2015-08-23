@@ -11,7 +11,7 @@ public class FastShip : BaseShip
 		this.HP = 3;
 		this.Shield = 0;
 		this.Speed = .2f;
-		this.AttachPoint = new Vector2(0, 3);
+		this.AttachPoint = new Vector3(-.4f, -.05f, -1);
 		this.Shooting = false;
 		this.source = this.GetComponent<AudioSource>();
 	}
