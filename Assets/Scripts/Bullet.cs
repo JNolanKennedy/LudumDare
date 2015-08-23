@@ -2,16 +2,10 @@
 using System.Collections;
 using System;
 
-public class Bullet : MonoBehaviour, BulletInterface {
-
-	public AudioClip shootSound;
+public class Bullet : BulletClass {
 
 	private float Speed;
 	private Vector2 Direction;
-	private int Damage;
-	private AudioSource source;
-	private string Shooter;
-	private string Foe;
 
 	// Use this for initialization
 	void Start () {
@@ -23,8 +17,8 @@ public class Bullet : MonoBehaviour, BulletInterface {
 
 	}
 
-	public void OnShoot(Vector2 direc, string shooter) {
-		this.Direction = direc;
+	public override void OnShoot(Vector2 direc, string shooter) {
+		this.Direction = (Vector2)direc;
 		this.Shooter = shooter;
 		if (this.Shooter == "PlayerShip") {
 			this.Foe = "Enemy";

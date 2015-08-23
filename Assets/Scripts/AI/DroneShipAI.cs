@@ -19,9 +19,9 @@ public class DroneShipAI : MonoBehaviour, AI {
         if (cooldown <= 0)
         {
             currentShip.Shoot();
-            cooldown = 1f;
+            setCooldown();
         }
-        cooldown = cooldown - Time.deltaTime;
+        cooldown -= Time.deltaTime;
     }
 
     private void AdjustPosition()
@@ -29,9 +29,9 @@ public class DroneShipAI : MonoBehaviour, AI {
         currentShip.Move(new Vector2(-1f, 0));
     }
 
-    public void setCooldown()
+    private void setCooldown()
     {
-        cooldown = 1f;
+        cooldown = 10f;
     }
     public void Infect()
     {

@@ -35,7 +35,6 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public virtual void OnDeath()
 	{
 		//Change Animation to EXPLOSION!!!!
-        Debug.Log("d");
 		this.HP = 0;
 		this.source.PlayOneShot(Explosion, 1);
 		this.GetComponent<Animator> ().CrossFade ("death", 0);

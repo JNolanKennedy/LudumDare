@@ -355,7 +355,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476732, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9502512, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
       propertyPath: m_CullingMode
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myShip: {fileID: 1009551205}
-  paraShip: {fileID: 0}
+  paraShip: {fileID: 188772, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
 --- !u!4 &1712149797
 Transform:
   m_ObjectHideFlags: 0
