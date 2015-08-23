@@ -2,30 +2,30 @@
 using System.Collections;
 
 public class DroneShipAI : AI {
-	
-    float cooldown = 1f;
 
+    float cooldown = 1f;
+		
     // Update is called once per frame
     void Update()
     {
-        AdjustPosition();
-        if (cooldown <= 0)
-        {
-            currentShip.Shoot();
-            cooldown = 1f;
-        }
-        cooldown = cooldown - Time.deltaTime;
-    }
+		AdjustPosition ();
+		if (cooldown <= 0) {
+			currentShip.Shoot ();
+			setCooldown ();
+		}
+		cooldown -= Time.deltaTime;
+	}
 
-    private void AdjustPosition()
+    public void AdjustPosition()
     {
         currentShip.Move(new Vector2(-1f, 0));
     }
 
-    public void setCooldown()
+    private void setCooldown()
     {
-        cooldown = 1f;
+        cooldown = 10f;
     }
+
     public void Infect()
     {
         //do nothing

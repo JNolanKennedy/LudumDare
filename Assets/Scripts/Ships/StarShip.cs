@@ -3,6 +3,8 @@ using System.Collections;
 
 public class StarShip : BaseShip
 {
+    private bool Shooting;
+    public GameObject Bullet;
 
     // Use this for initialization
 	public override void overrideStart()

@@ -2,10 +2,13 @@
 using System.Collections;
 using System;
 
-public class Bullet : BulletBase, BulletInterface {
+public class Bullet : BulletClass {
+
+	private float Speed;
+	private Vector2 Direction;
 
 	// Use this for initialization
-	public override void overrideStart () {
+	public void Start () {
 		this.source = this.GetComponent<AudioSource>();
 		this.Damage = 1;
 		this.Speed = 500f;
@@ -14,8 +17,8 @@ public class Bullet : BulletBase, BulletInterface {
 
 	}
 
-	public void OnShoot(Vector2 direc, string shooter) {
-		this.Direction = direc;
+	public override void OnShoot(Vector2 direc, string shooter) {
+		this.Direction = (Vector2)direc;
 		this.Shooter = shooter;
 		if (this.Shooter == "PlayerShip") {
 			this.Foe = "Enemy";

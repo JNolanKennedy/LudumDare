@@ -2,16 +2,7 @@
 using System.Collections;
 using System;
 
-public class droneattack : MonoBehaviour {
-
-    public AudioClip shootSound;
-
-    private int Damage;
-    private AudioSource source;
-    private string Shooter;
-    private string Foe;
-    private float time = 1f;
-    GameObject drone;
+public class droneattack : BulletClass {
 
     // Use this for initialization
     void Start()
@@ -21,9 +12,8 @@ public class droneattack : MonoBehaviour {
         this.source.PlayOneShot(shootSound, 1);
     }
 
-    public void OnShoot(GameObject d, string shooter)
+    public override void OnShoot(string shooter)
     {
-        drone = d;
         this.Shooter = shooter;
         if (this.Shooter == "PlayerShip")
         {
@@ -41,26 +31,13 @@ public class droneattack : MonoBehaviour {
         {
             ShipInterface enem = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
             enem.TakeDamage(this.Damage);
-            drone.GetComponent<DroneShipAI>().setCooldown();
-            drone.GetComponent<DroneShip>().setSpeed();
-            Destroy(this.gameObject);
+            //drone.GetComponent<DroneShipAI>().setCooldown();
+            //Destroy(this.gameObject);
         }
-        else if (coll.gameObject.tag == "endwall")
-        {
-            drone.GetComponent<DroneShipAI>().setCooldown();
-            drone.GetComponent<DroneShip>().setSpeed();
-            Destroy(this.gameObject);
-        }
+		Destroy (this.gameObject, 1);
     }
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            drone.GetComponent<DroneShipAI>().setCooldown();
-            drone.GetComponent<DroneShip>().setSpeed();
-            Destroy(gameObject);
-        }
     }
 }

@@ -2,11 +2,14 @@
 using System.Collections;
 using System;
 
-public class Electroball : BulletBase, BulletInterface
+public class Electroball : BulletClass
 {
 
+    private float Speed;
+    private Vector2 Direction;
+
     // Use this for initialization
-    public override void overrideStart()
+    public void Start()
     {
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;
@@ -16,7 +19,7 @@ public class Electroball : BulletBase, BulletInterface
 
     }
 
-    public void OnShoot(Vector2 direc, string shooter)
+    public override void OnShoot(Vector2 direc, string shooter)
     {
         this.Direction = direc;
         this.Shooter = shooter;
