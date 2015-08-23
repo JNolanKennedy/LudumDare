@@ -7,7 +7,7 @@ public class DroneShip : BaseShip {
 	public GameObject Bullet;
 
     // Use this for initialization   
-    void Start()
+    public override void overrideStart()
     {
         this.HP = 1;
         this.Shield = 1;

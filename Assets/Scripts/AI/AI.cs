@@ -1,7 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface AI
+public class AI: MonoBehaviour
 {
-	void Infect();
+	protected ShipInterface currentShip;
+	public void Start()
+	{
+		currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
+		registerSelf ();
+		overrideStart ();
+	}
+
+	public virtual void overrideStart()
+	{
+
+	}
+
+	private void registerSelf()
+	{
+
+	}
+
+	private void OnDestroy()
+	{
+		//deregs self
+	}
 }

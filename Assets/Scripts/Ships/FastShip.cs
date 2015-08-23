@@ -7,7 +7,7 @@ public class FastShip : BaseShip
 	public GameObject Bullet;
 	
 	// Use this for initialization
-	void Start () {
+	public override void overrideStart() {
 		this.HP = 3;
 		this.Shield = 0;
 		this.Speed = .2f;

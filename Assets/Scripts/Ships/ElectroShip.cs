@@ -9,7 +9,7 @@ public class ElectroShip : BaseShip
     private bool Shooting;
 
 	// Use this for initialization
-	void Start () {
+	public override void overrideStart() {
 		this.HP = 3;
 		this.Shield = 3;
 		this.Speed = .1f;

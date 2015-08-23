@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FastShipAI : MonoBehaviour, AI {
-    ShipInterface currentShip;
+public class FastShipAI : AI {
     Transform player;
     float cooldown = .3f;
 
 	// Use this for initialization
-	void Start () {
-        currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
-        this.transform.Rotate(Vector3.forward * 180); 
+	public override void overrideStart () {
+		this.transform.Rotate (Vector3.forward * 180);
 	}
 	
 	// Update is called once per frame

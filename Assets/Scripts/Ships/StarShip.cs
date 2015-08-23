@@ -5,7 +5,7 @@ public class StarShip : BaseShip
 {
 
     // Use this for initialization
-    void Start()
+	public override void overrideStart()
     {
         this.HP = 3;
         this.Shield = 1;

@@ -2,20 +2,11 @@
 using System.Collections;
 using System;
 
-public class Electroball : MonoBehaviour, BulletInterface
+public class Electroball : BulletBase, BulletInterface
 {
 
-    public AudioClip shootSound;
-
-    private float Speed;
-    private Vector2 Direction;
-    private int Damage;
-    private AudioSource source;
-    private string Shooter;
-    private string Foe;
-
     // Use this for initialization
-    void Start()
+    public override void overrideStart()
     {
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;
