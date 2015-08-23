@@ -1,17 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StarShipAI : MonoBehaviour {
+public class StarShipAI : AI {
 
-    ShipInterface currentShip;
     bool isPlayer = false;
     Transform player;
-
-    // Use this for initialization
-    void Start()
-    {
-        currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
-    }
 
     // Update is called once per frame
     void Update()

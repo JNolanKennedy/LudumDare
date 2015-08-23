@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicAIBehavior : MonoBehaviour, AI {
-	ShipInterface currentShip;
+public class BasicAIBehavior : AI {
 
-	// Use this for initialization
-	void Start () {
-		currentShip = this.GetComponent (typeof(ShipInterface)) as ShipInterface;
+	public override void overrideStart () {
 		this.transform.Rotate (Vector3.forward * 180);
 	
 	}

@@ -15,10 +15,18 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected Vector2 AttachPoint;
 	protected AudioSource source;
 	protected bool isParasite = false;
-
+	
+	//RegisterSelf is used for tallying purposes in the (future) pause manager
 	void Start()
 	{
-		;
+		//generic start for any future requirements
+		registerSelf ();
+		overrideStart ();
+	}
+	//This is the function you override by default for your own method calls during start
+	public virtual void overrideStart()
+	{
+
 	}
 	
 	public virtual void Shoot()
@@ -77,8 +85,23 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		return this.Shield;
 	}
 
+	public int getHP()
+	{
+		return this.HP;
+	}
+
 	public bool getIsParasite()
 	{
 		return this.isParasite;
+	}
+
+	private void registerSelf()
+	{
+
+	}
+
+	private void onDestroy()
+	{
+		//deregs self
 	}
 }

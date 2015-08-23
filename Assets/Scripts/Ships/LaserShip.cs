@@ -6,7 +6,7 @@ public class LaserShip : BaseShip
 	private int Charge;
 
 	// Use this for initialization
-	void Start () {
+	public override void overrideStart() {
 		this.HP = 3;
 		this.Shield = 1;
 		this.Speed = .01f;

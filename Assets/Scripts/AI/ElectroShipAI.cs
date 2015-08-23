@@ -1,17 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ElectroShipAI : MonoBehaviour, AI
+public class ElectroShipAI : AI
 {
-    ShipInterface currentShip;
     Transform player;
     float cooldown = .6f;
-
-    // Use this for initialization
-    void Start()
-    {
-        currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
-    }
 
     // Update is called once per frame
     void Update()

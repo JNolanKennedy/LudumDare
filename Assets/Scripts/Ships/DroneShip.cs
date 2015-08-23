@@ -8,7 +8,7 @@ public class DroneShip : BaseShip {
 	private float time = 1f;
 
     // Use this for initialization   
-    void Start()
+    public override void overrideStart()
     {
         this.HP = 1;
         this.Shield = 1;

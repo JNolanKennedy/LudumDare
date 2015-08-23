@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+<<<<<<< HEAD
 public class Electroball : BulletClass
 {
 
@@ -9,7 +10,7 @@ public class Electroball : BulletClass
     private Vector2 Direction;
 
     // Use this for initialization
-    void Start()
+    public override void overrideStart()
     {
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;

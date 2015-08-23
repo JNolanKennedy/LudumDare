@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DroneShipAI : MonoBehaviour, AI {
-
-    ShipInterface currentShip;
+public class DroneShipAI : AI {
+	
+	ShipInterface currentShip;
     float cooldown = 1f;
-
-    // Use this for initialization
-    void Start()
-    {
-        currentShip = this.GetComponent(typeof(ShipInterface)) as ShipInterface;
-    }
-
+		
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +16,6 @@ public class DroneShipAI : MonoBehaviour, AI {
             setCooldown();
         }
         cooldown -= Time.deltaTime;
-    }
 
     private void AdjustPosition()
     {
@@ -33,6 +26,7 @@ public class DroneShipAI : MonoBehaviour, AI {
     {
         cooldown = 10f;
     }
+
     public void Infect()
     {
         //do nothing
