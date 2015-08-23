@@ -10,7 +10,7 @@ public class healthbar : MonoBehaviour {
     public void start()
     {
 
-		this.myShip = this.transform.parent.GetComponent<BaseShip> () as BaseShip;
+		this.myShip = this.transform.parent.GetComponent(typeof(BaseShip)) as BaseShip;
 		this.fullHP = this.myShip.getHP ();
     }
 
