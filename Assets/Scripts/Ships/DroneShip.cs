@@ -37,36 +37,6 @@ public class DroneShip : BaseShip {
         Shooting = false;
     }
 
-    public override void Move(Vector2 Direction)
-    {
-        //Takes the direction, multiplies by speed
-        this.transform.position += (float)this.Speed * (Vector3)Direction;
-    }
-
-    public override bool TakeDamage(int val)
-    {
-        if (this.Shield <= 0)
-        {
-            Speed = 0;
-            this.Shield = 0;
-            if (this.HP > 0)
-            {
-                this.HP -= val;
-            }
-        }
-        else
-        {
-            this.Shield -= val;
-        }
-
-        if (this.HP <= 0)
-        {
-            this.OnDeath();
-            return true;
-        }
-        return false;
-    }
-
     public override void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "PlayerShip")
