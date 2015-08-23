@@ -2,62 +2,18 @@
 using System.Collections;
 using System;
 
-public class Parasite : MonoBehaviour, ShipInterface {
-
-	//Hull Points
-	private int HP;
-	//Shield
-	private int Shield;
-	//Ship Speed
-	private float Speed;
-	public GameObject Bullet;
-	//Position on the ship the parastite shows up on (0,0) is upper left
-	private Vector2 AttachPoint;
+public class Parasite : BaseShip {
 	
 	// Use this for initialization
 	void Start () {
-		this.HP = 1;
+		this.HP = 100;
 		this.Shield = 0;
 		this.Speed = .1f;
 		this.AttachPoint = new Vector2(0, 3);
+		this.isParasite = true;
+		this.source = this.GetComponent<AudioSource>();
 	}
 
-	public void Shoot()
-	{
-		;//The parasite cannot shoot!
-	}
-	
-	public void Move(Vector2 Direction)
-	{
-		//Takes the direction, multiplies by speed
-		this.transform.position += (float)this.Speed * (Vector3)Direction;
-	}
-	
-	public bool TakeDamage(int val)
-	{
-		//Techincally has no shields, but we'll leave this for now.
-		if (this.Shield <= 0) {
-			this.Shield = 0;
-			if (this.HP > 0) {
-				this.HP -= val;
-			}
-		} else {
-			this.Shield -= val;
-		}
-		
-		if (this.Shield <= 0) {
-			OnDeath();
-			return true;
-		}
-		return false;
-	}
-	
-	public void OnDeath()
-	{
-		//Change Animation to EXPLOSION!!!!
-		this.HP = 0;
-	}
-	
 	void Infect(GameObject ship, ShipInterface enem)
 	{
 		//remove the AI controller on the ship
@@ -72,16 +28,7 @@ public class Parasite : MonoBehaviour, ShipInterface {
 		Destroy (this.gameObject);
 	}
 	
-	public void Upgrade()
-	{
-	}
-
-	public int getShields() 
-	{
-		return 0;
-	}
-	
-	public void OnTriggerEnter2D(Collider2D coll)
+	public override void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (String.Equals (coll.gameObject.tag, "Enemy")) {
 			ShipInterface enem = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
