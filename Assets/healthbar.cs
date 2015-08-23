@@ -15,7 +15,6 @@ public class healthbar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         curHP = (gameObject.GetComponentInParent((typeof(BaseShip))) as BaseShip).getHP();
-        Debug.Log(curHP/fullHP);
         transform.localScale = new Vector3((curHP / fullHP), 1,1);
 	}
 }
