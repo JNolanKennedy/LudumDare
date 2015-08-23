@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DroneShip : BaseShip {
@@ -26,7 +26,7 @@ public class DroneShip : BaseShip {
             this.Shooting = true;
             Speed = 0;
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-			BulletClass BI = clone.GetComponent (typeof(BulletClass)) as BulletClass;
+			BaseBullet BI = clone.GetComponent (typeof(BaseBullet)) as BaseBullet;
 			BI.OnShoot(this.tag);
 			this.time = 2.5f;
         }

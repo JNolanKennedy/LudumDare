@@ -16,44 +16,60 @@ public class PauseManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown("escape") && pause == false) {
 			foreach (GameObject obj in registeredObjects) {
-				obj.BroadcastMessage("PauseHandler");
-				rbod = obj.GetComponent<Rigidbody2D>();
-				bcol = obj.GetComponent<BoxCollider2D>();
-
-				if (rbod != null)
+				if (obj == null)
 				{
-					rbod.isKinematic = true;
+					//NOTHING
 				}
-
-				if (bcol != null)
+				else
 				{
-					bcol.enabled = false;
-				}
+					obj.BroadcastMessage("PauseHandler");
+					rbod = obj.GetComponent<Rigidbody2D>();
+					bcol = obj.GetComponent<BoxCollider2D>();
 
-				pause = true;
+					if (rbod != null)
+					{
+						rbod.isKinematic = true;
+					}
+
+					if (bcol != null)
+					{
+						bcol.enabled = false;
+					}
+
+					pause = true;
+				}
 
 			}
 		} 
 		else if(Input.GetKeyDown("escape"))
 		{
 			foreach (GameObject obj in registeredObjects) {
-				obj.BroadcastMessage("PauseHandler", 0);
-				rbod = obj.GetComponent<Rigidbody2D>();
-				bcol = obj.GetComponent<BoxCollider2D>();
-
-				if (rbod != null)
+				if (obj == null)
 				{
-					rbod.isKinematic = false;
+					//nothing
 				}
-				
-				if (bcol != null)
+				else
 				{
-					bcol.enabled = true;
-				}
+					rbod = obj.GetComponent<Rigidbody2D>();
+					bcol = obj.GetComponent<BoxCollider2D>();
 
-				pause = false;
+					if (rbod != null)
+					{
+						rbod.isKinematic = false;
+					}
+					
+					if (bcol != null)
+					{
+						bcol.enabled = true;
+					}
+
+					pause = false;
+					obj.BroadcastMessage("PauseHandler", 0);
+				}
 			}
 		}
+
+		registeredObjects.RemoveAll (GameObject => GameObject == null);
 	
 	}
 		

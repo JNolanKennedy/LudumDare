@@ -36,11 +36,11 @@ public class ElectroBullet : BaseBullet
         {
             ShipInterface enem = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
             enem.TakeDamage(this.Damage);
-			Destroy (this);
+			Destroy (this.gameObject);
         }
         else if (coll.gameObject.tag == "endwall")
         {
-			Destroy (this);
+			Destroy (this.gameObject);
         }
     }
     // Update is called once per frame
