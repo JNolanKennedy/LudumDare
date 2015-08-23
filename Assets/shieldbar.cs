@@ -16,7 +16,9 @@ public class shieldbar : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        curShield = myShip.getShields();
-        transform.localScale = new Vector3((curShield / fullShield), 1, 1);
+		if (fullShield != 0) {
+			curShield = myShip.getShields ();
+			transform.localScale = new Vector3 ((curShield / fullShield), 1, 1);
+		}
     }
 }
