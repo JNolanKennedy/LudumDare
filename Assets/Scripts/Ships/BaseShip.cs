@@ -39,6 +39,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public virtual void Move(Vector2 Direction)
 	{
 		//Takes the direction, multiplies by speed
+        Debug.Log(Speed + " : " + (Vector3)Direction);
 		this.transform.position += (float)this.Speed * (Vector3)Direction;
 	}
 	

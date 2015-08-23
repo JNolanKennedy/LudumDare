@@ -4,6 +4,8 @@ using System.Collections;
 public class LaserShip : BaseShip
 {
 	private int Charge;
+    public GameObject Bullet;
+    private bool Shooting;
 
 	// Use this for initialization
 	public override void overrideStart() {
@@ -13,14 +15,19 @@ public class LaserShip : BaseShip
 		this.AttachPoint = new Vector2(0, 3);
 		this.Charge = 0;
 		this.source = this.GetComponent<AudioSource>();
+        this.transform.Rotate(Vector3.forward * 180);
 	}
 
 	public override void Shoot()
 	{
-		this.Charge += (int)Time.deltaTime;
-		if (this.Charge >= 2) {
-			this.Charge = 0;
-		}
+        if (!this.Shooting)
+        {
+            this.Shooting = true;
+            GameObject clone = Instantiate(Bullet, this.transform.position+new Vector3(-18.5f,0), this.transform.rotation) as GameObject;
+            BulletClass BI = clone.GetComponent(typeof(BulletClass)) as BulletClass;
+            BI.OnShoot(transform.right, this.tag);
+            this.Shooting = false;
+        }
 	}
 
 	public override void OnTriggerEnter2D(Collider2D coll)
