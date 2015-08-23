@@ -17,7 +17,6 @@ public class shieldbar : MonoBehaviour {
     void Update()
     {
         curShield = myShip.getShields();
-        Debug.Log(curShield + " : " + fullShield + " : " + (curShield / fullShield));
         transform.localScale = new Vector3((curShield / fullShield), 1, 1);
     }
 }
