@@ -78,6 +78,11 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		return this.Shield;
 	}
 
+	public int getHP()
+	{
+		return this.HP;
+	}
+
 	public bool getIsParasite()
 	{
 		return this.isParasite;
