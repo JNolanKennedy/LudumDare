@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BaseShip : MonoBehaviour, ShipInterface {
 
-	public AudioClip Explosion;
+	protected AudioClip Explosion;
 
 	//Hull Points
 	protected int HP;
@@ -15,15 +15,29 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected Vector2 AttachPoint;
 	protected AudioSource source;
 	protected bool isParasite = false;
-	
+
+	public GameObject HPbar;
+	public GameObject SHbar;
+
 	//RegisterSelf is used for tallying purposes in the (future) pause manager
 	void Start()
 	{
+		HP = 1;
+		Shield = 1;
 		//generic start for any future requirements
+
 		registerSelf ();
 		overrideStart ();
-        gameObject.GetComponentInChildren<healthbar>().start();
-        gameObject.GetComponentInChildren<shieldbar>().start();
+
+		//Initiates HP bar deets
+
+		HPbar = Instantiate (Resources.Load ("health"), this.transform.position, this.transform.rotation) as GameObject;
+		HPbar.transform.parent = this.transform;
+		HPbar.transform.localPosition = new Vector3 (0,-1,0);
+		SHbar = Instantiate (Resources.Load ("shield"), this.transform.position, this.transform.rotation) as GameObject;
+		SHbar.transform.parent = this.transform;
+		SHbar.transform.localPosition = new Vector3 (0,-1,0);
+
 	}
 	//This is the function you override by default for your own method calls during start
 	public virtual void overrideStart()
@@ -105,5 +119,9 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	private void onDestroy()
 	{
 		//deregs self
+	}
+	private void setupBars()
+	{
+
 	}
 }

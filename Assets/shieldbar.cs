@@ -5,16 +5,18 @@ public class shieldbar : MonoBehaviour {
 
     float fullShield;
     float curShield;
+	public BaseShip myShip;
 
     public void start()
     {
-        fullShield = (gameObject.GetComponentInParent((typeof(BaseShip))) as BaseShip).getShields();
+		myShip = gameObject.GetComponentInParent((typeof(BaseShip))) as BaseShip;
+        fullShield = myShip.getShields();
     }
 
     // Update is called once per frame
     void Update()
     {
-        curShield = (gameObject.GetComponentInParent((typeof(BaseShip))) as BaseShip).getShields();
+        curShield = myShip.getShields();
         transform.localScale = new Vector3((curShield / fullShield), 1, 1);
     }
 }
