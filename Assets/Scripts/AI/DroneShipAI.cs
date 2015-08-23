@@ -2,22 +2,21 @@
 using System.Collections;
 
 public class DroneShipAI : AI {
-	
-	ShipInterface currentShip;
+
     float cooldown = 1f;
 		
     // Update is called once per frame
     void Update()
     {
-        AdjustPosition();
-        if (cooldown <= 0)
-        {
-            currentShip.Shoot();
-            setCooldown();
-        }
-        cooldown -= Time.deltaTime;
+		AdjustPosition ();
+		if (cooldown <= 0) {
+			currentShip.Shoot ();
+			setCooldown ();
+		}
+		cooldown -= Time.deltaTime;
+	}
 
-    private void AdjustPosition()
+    public void AdjustPosition()
     {
         currentShip.Move(new Vector2(-1f, 0));
     }

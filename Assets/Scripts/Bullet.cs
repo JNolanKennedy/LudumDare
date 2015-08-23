@@ -8,7 +8,7 @@ public class Bullet : BulletClass {
 	private Vector2 Direction;
 
 	// Use this for initialization
-	public override void overrideStart () {
+	public void Start () {
 		this.source = this.GetComponent<AudioSource>();
 		this.Damage = 1;
 		this.Speed = 500f;
