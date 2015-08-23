@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 120360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d28f4441164964888c3fab06c36712, type: 3}
+  m_Script: {fileID: 11500000, guid: 487432f1a85474d4880a68f85da14026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootSound: {fileID: 0}

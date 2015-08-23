@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 137398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938077999186afb44bf073c78056e1b7, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b85c52c1b363344bbf2166973fdef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootSound: {fileID: 8300000, guid: 3b6b4f664418da544b234741d9f52dcb, type: 3}

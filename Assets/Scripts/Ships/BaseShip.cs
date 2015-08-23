@@ -47,16 +47,21 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	}
 
-	void Update()
-	{
+	void Update() {
 		overrideUpdate ();
 	}
-
+	
 	public virtual void overrideUpdate()
 	{
-
+		if (this.tag == "PlayerShip" && this.invincablity > 0) {
+			this.GetComponent<SpriteRenderer> ().color = Color.yellow;
+			this.invincablity -= Time.deltaTime;
+		} else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincablity <= 0) {
+			this.GetComponent<SpriteRenderer> ().color = Color.white;
+			this.invincablity -= Time.deltaTime;
+		}
 	}
-	
+
 	public virtual void Shoot()
 	{
 		;
@@ -174,20 +179,6 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	}
 
-	void Update() {
-		overrideUpdate ();
-	}
-
-	public virtual void overrideUpdate()
-	{
-		if (this.tag == "PlayerShip" && this.invincablity > 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.yellow;
-			this.invincablity -= Time.deltaTime;
-		}
-		else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer>().color != Color.white && this.invincablity <= 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.white;
-			this.invincablity -= Time.deltaTime;
-		}
 
 	private void PauseHandler()
 	{
