@@ -9,12 +9,11 @@ public class FastShip : BaseShip
 	// Use this for initialization
 	public override void overrideStart() {
 		this.HP = 3;
-		this.Shield = 1;
+		this.Shield = 0;
 		this.Speed = .2f;
 		this.AttachPoint = new Vector2(0, 3);
 		this.Shooting = false;
 		this.source = this.GetComponent<AudioSource>();
-		this.TakeDamage (1);
 	}
 	
 	public override void Shoot()
