@@ -36,7 +36,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		HPbar.transform.localPosition = new Vector3 (0,-1,0);
 		SHbar = Instantiate (Resources.Load ("shield"), this.transform.position, this.transform.rotation) as GameObject;
 		SHbar.transform.parent = this.transform;
-		SHbar.transform.localPosition = new Vector3 (0,-1,0);
+		SHbar.transform.localPosition = new Vector3 (0,-1,-1);
 
 	}
 	//This is the function you override by default for your own method calls during start
