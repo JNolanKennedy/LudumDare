@@ -15,6 +15,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected Vector2 AttachPoint;
 	protected AudioSource source;
 	protected bool isParasite = false;
+	protected float invincablity;
 
 	public GameObject HPbar;
 	public GameObject SHbar;
@@ -24,6 +25,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	{
 		HP = 1;
 		Shield = 1;
+		invincablity = 0f;
 		//generic start for any future requirements
 
 		registerSelf ();
@@ -58,7 +60,6 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	
 	public virtual void OnDeath()
 	{
-		Debug.Log ("This: " + this.transform.name);
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
 		this.source.PlayOneShot(Explosion, 1);
@@ -93,18 +94,37 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	public virtual bool TakeDamage(int val)
 	{
-		if (this.Shield <= 0) {
-			this.Shield = 0;
-			if (this.HP > 0) {
-				this.HP -= val;
+		if (this.tag == "PlayerShip") {
+			if (invincablity <= 0) {
+				if (this.Shield <= 0) {
+					this.Shield = 0;
+					if (this.HP > 0) {
+						this.HP -= val;
+						this.invincablity = 1f;
+					}
+				} else {
+					this.Shield -= val;
+				}
+			
+				if (this.HP <= 0) {
+					OnDeath ();
+					return true;
+				}
 			}
 		} else {
-			this.Shield -= val;
-		}
-		
-		if (this.HP <= 0) {
-			OnDeath();
-			return true;
+			if (this.Shield <= 0) {
+				this.Shield = 0;
+				if (this.HP > 0) {
+					this.HP -= val;
+				}
+			} else {
+				this.Shield -= val;
+			}
+			
+			if (this.HP <= 0) {
+				OnDeath ();
+				return true;
+			}
 		}
 		return false;
 	}
@@ -136,5 +156,21 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	private void setupBars()
 	{
 
+	}
+
+	void Update() {
+		overrideUpdate ();
+	}
+
+	public virtual void overrideUpdate()
+	{
+		if (this.tag == "PlayerShip" && this.invincablity > 0) {
+			this.GetComponent<SpriteRenderer>().color = Color.yellow;
+			this.invincablity -= Time.deltaTime;
+		}
+		else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer>().color != Color.white && this.invincablity <= 0) {
+			this.GetComponent<SpriteRenderer>().color = Color.white;
+			this.invincablity -= Time.deltaTime;
+		}
 	}
 }

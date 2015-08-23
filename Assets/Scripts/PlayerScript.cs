@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Jump")) {
+		if (Input.GetButtonDown ("Jump") || Input.GetButtonDown ("Fire1")) {
 			currentShip.Shoot ();
 		} else if (Input.GetButtonDown ("Eject") && !this.currentShip.getIsParasite()) {
 			GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;

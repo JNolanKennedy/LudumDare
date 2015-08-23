@@ -46,13 +46,22 @@ public class DroneShip : BaseShip {
 		}
     }
 
-	void Update()
+	public override void overrideUpdate()
 	{
 		if (this.time > 0)
 			this.time -= Time.deltaTime;
 		if (this.time < 1 && this.time > 0) {
 			this.setSpeed ();
 			this.Shooting = false;
+		}
+
+		if (this.tag == "PlayerShip" && this.invincablity > 0) {
+			this.GetComponent<SpriteRenderer>().color = Color.yellow;
+			this.invincablity -= Time.deltaTime;
+		}
+		else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer>().color != Color.white && this.invincablity <= 0) {
+			this.GetComponent<SpriteRenderer>().color = Color.white;
+			this.invincablity -= Time.deltaTime;
 		}
 	}
 }
