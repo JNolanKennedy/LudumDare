@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: b9f60bfd568a6e046904b00046926813
-timeCreated: 1440287542
+timeCreated: 1440354659
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Explosion: {fileID: 8300000, guid: 80e00071296404c478e3c48aecde563b, type: 3}
+  - HPbar: {fileID: 138748, guid: ef16a76d26f4489409623a93a2447464, type: 2}
+  - SHbar: {fileID: 105278, guid: e81dd85526a0c744cb29bfd514cbee68, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
