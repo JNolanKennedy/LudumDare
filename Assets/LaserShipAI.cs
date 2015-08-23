@@ -6,7 +6,7 @@ public class LaserShipAI : AI {
     float cooldown = 3.6f;
 
     // Update is called once per frame
-    void Update()
+	public override void overrideUpdate()
     {
         AdjustPosition();
         if (cooldown <= 0)

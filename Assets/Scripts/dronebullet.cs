@@ -2,26 +2,18 @@
 using System.Collections;
 using System;
 
-public class Electroball : BulletClass
-{
-
-    private float Speed;
-    private Vector2 Direction;
+public class dronebullet : BaseBullet  {
 
     // Use this for initialization
-    public void Start()
+    void Start()
     {
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;
-        this.Speed = 300f;
         this.source.PlayOneShot(shootSound, 1);
-        this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
-
     }
 
-    public override void OnShoot(Vector2 direc, string shooter)
+    public override void OnShoot(string shooter)
     {
-        this.Direction = direc;
         this.Shooter = shooter;
         if (this.Shooter == "PlayerShip")
         {
@@ -39,16 +31,13 @@ public class Electroball : BulletClass
         {
             ShipInterface enem = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
             enem.TakeDamage(this.Damage);
-            Destroy(this.gameObject);
+            //drone.GetComponent<DroneShipAI>().setCooldown();
+            //Destroy(this.gameObject);
         }
-        else if (coll.gameObject.tag == "endwall")
-        {
-            Destroy(this.gameObject);
-        }
+		Destroy (this);
     }
     // Update is called once per frame
     void Update()
     {
-        ;
     }
 }

@@ -44,6 +44,16 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	{
 
 	}
+
+	void Update()
+	{
+		overrideUpdate ();
+	}
+
+	public virtual void overrideUpdate()
+	{
+
+	}
 	
 	public virtual void Shoot()
 	{
@@ -75,7 +85,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public virtual void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "endwall") {
-			Destroy (this.gameObject);
+			onDestroy();
 		}
 
 		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
@@ -131,15 +141,21 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	private void registerSelf()
 	{
-
+		GameObject.Find ("GameManager").GetComponent<PauseManager> ().registerObject (this.gameObject);
 	}
 
 	private void onDestroy()
 	{
-		//deregs self
+
 	}
+
 	private void setupBars()
 	{
 
+	}
+
+	private void PauseHandler()
+	{
+		//
 	}
 }

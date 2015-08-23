@@ -7,7 +7,7 @@ public class ElectroShipAI : AI
     float cooldown = .6f;
 
     // Update is called once per frame
-    void Update()
+	public override void overrideUpdate ()
     {
         player = GameObject.FindGameObjectWithTag("PlayerShip").transform;
         AdjustPosition();

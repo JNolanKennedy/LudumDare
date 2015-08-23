@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletBase : MonoBehaviour {
+public class BaseBullet : MonoBehaviour {
 	
 	public AudioClip shootSound;
 	
@@ -11,6 +11,7 @@ public class BulletBase : MonoBehaviour {
 	protected AudioSource source;
 	protected string Shooter;
 	protected string Foe;
+	private bool pause;
 
 	// Use this for initialization
 	//RegisterSelf is used for tallying purposes in the (future) pause manager
@@ -30,13 +31,37 @@ public class BulletBase : MonoBehaviour {
 	
 	}
 
-	private void registerSelf()
+	public virtual void overrideUpdate()
 	{
-		
+
 	}
 
-	private void OnDestroy()
+	private void registerSelf()
 	{
-		//dereg self
+		GameObject.Find ("GameManager").GetComponent<PauseManager> ().registerObject (this.gameObject);
+	}
+
+	public void OnDestroy()
+	{
+
+	}
+	private void PauseHandler()
+	{
+		if (pause == false)
+			pause = true;
+		else {
+			pause = false;
+			this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
+		}
+	}
+
+	public virtual void OnShoot(Vector2 direc, string shooter)
+	{
+		;
+	}
+	
+	public virtual void OnShoot(string shooter)
+	{
+		;
 	}
 }

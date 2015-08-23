@@ -38,12 +38,9 @@ public class DroneShip : BaseShip {
         Shooting = false;
     }
 
-    public override void OnTriggerEnter2D(Collider2D coll)
+    public override void overrideOnTriggerEnter2D(Collider2D coll)
     {
-		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
-			ShipInterface si = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
-			si.TakeDamage(1);
-		}
+
     }
 
 	void Update()

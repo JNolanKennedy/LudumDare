@@ -2,13 +2,10 @@
 using System.Collections;
 using System;
 
-public class Bullet : BulletClass {
-
-	private float Speed;
-	private Vector2 Direction;
+public class Bullet : BaseBullet {
 
 	// Use this for initialization
-	public void Start () {
+	public override void overrideStart () {
 		this.source = this.GetComponent<AudioSource>();
 		this.Damage = 1;
 		this.Speed = 500f;
