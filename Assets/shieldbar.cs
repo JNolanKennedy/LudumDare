@@ -9,7 +9,7 @@ public class shieldbar : MonoBehaviour {
 
     public void start()
     {
-		myShip = gameObject.GetComponentInParent((typeof(BaseShip))) as BaseShip;
+        myShip = this.GetComponentInParent((typeof(BaseShip))) as BaseShip;
         fullShield = myShip.getShields();
     }
 

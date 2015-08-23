@@ -40,11 +40,12 @@ public class laser : BulletClass {
             enem.TakeDamage(this.Damage);
         }
     }
+
+    //aadaf
     // Update is called once per frame
     void Update()
     {
         time -= Time.deltaTime;
-        Debug.Log(Speed + " : " + (Vector3)Direction);
         if (time > 0)
         {
             this.transform.position += (float)this.Speed * (Vector3)Direction;
