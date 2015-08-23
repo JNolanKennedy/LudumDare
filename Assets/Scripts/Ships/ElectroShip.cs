@@ -4,7 +4,6 @@ using System.Collections;
 public class ElectroShip : BaseShip 
 {
 	public GameObject Bullet;
-
     private GameObject player;
     private bool Shooting;
 
@@ -30,4 +29,28 @@ public class ElectroShip : BaseShip
             this.Shooting = false;
         }
 	}
+
+    public override bool TakeDamage(int val)
+    {
+        if (this.Shield <= 0)
+        {
+            this.Shield = 0;
+            this.Speed = 0;
+            if (this.HP > 0)
+            {
+                this.HP -= val;
+            }
+        }
+        else
+        {
+            this.Shield -= val;
+        }
+
+        if (this.HP <= 0)
+        {
+            OnDeath();
+            return true;
+        }
+        return false;
+    }
 }

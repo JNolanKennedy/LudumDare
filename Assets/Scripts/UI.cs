@@ -10,11 +10,12 @@ public class UI : MonoBehaviour {
 	void Start () {
         gameObject.GetComponentsInChildren<Text>()[0].text = "HP : ";
         gameObject.GetComponentsInChildren<Text>()[1].text = "Shields : ";
-        player = GameObject.FindWithTag("PlayerShip");
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        player = GameObject.FindWithTag("PlayerShip");
         string hp = (player.GetComponent(typeof(BaseShip)) as BaseShip).getHP().ToString();
         string shields = (player.GetComponent(typeof(BaseShip)) as BaseShip).getShields().ToString();
         gameObject.GetComponentsInChildren<Text>()[0].text = "HP : " + hp;

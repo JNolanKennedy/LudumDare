@@ -72,12 +72,10 @@ public class DroneShip : BaseShip {
     {
         if (coll.tag == "PlayerShip")
         {
-            Debug.Log("a");
             OnDeath();
         }
         else if (coll.tag == "boundwall")
         {
-            Debug.Log("b");
             OnDeath();
         }
     }

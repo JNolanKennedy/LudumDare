@@ -16,7 +16,7 @@ GameObject:
   - 82: {fileID: 8258938}
   m_Layer: 0
   m_Name: para_0
-  m_TagString: Untagged
+  m_TagString: PlayerShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,10 @@ Prefab:
       propertyPath: Explosion
       value: 
       objectReference: {fileID: 8300000, guid: 80e00071296404c478e3c48aecde563b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: PlayerShip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188772}
