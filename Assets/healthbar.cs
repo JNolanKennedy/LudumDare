@@ -2,16 +2,16 @@
 using System.Collections;
 
 public class healthbar : MonoBehaviour {
-    float fullHP;
-    float curHP;
+    public float fullHP;
+    public float curHP;
 
 	private BaseShip myShip;
 
     public void start()
     {
 
-		this.myShip = this.transform.parent.GetComponent<BaseShip> () as BaseShip;
-		this.fullHP = this.myShip.getHP ();
+        this.myShip = this.GetComponentInParent((typeof(BaseShip))) as BaseShip;
+		this.fullHP = this.myShip.getHP();
     }
 
 	// Update is called once per frame

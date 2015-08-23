@@ -30,6 +30,7 @@ public class LaserShip : BaseShip
         }
 	}
 
+    //adf
 	public override void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {

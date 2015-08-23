@@ -342,6 +342,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 472679960}
+--- !u!1001 &709010936
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.64169788
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.02865648
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454898, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b46d71bac2a6e9645be5266d996fee6b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &784537313
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +572,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &993372923
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +659,7 @@ RectTransform:
   - {fileID: 1760399019}
   - {fileID: 472679961}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -649,7 +691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea40f1a716ff1041b747e4024de24f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 0}
+  HPbar: {fileID: 0}
+  SHbar: {fileID: 0}
 --- !u!1 &1062234629
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +767,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1062234634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f790d9ef145afb741948b50608a4da0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 0}
+  HPbar: {fileID: 0}
+  SHbar: {fileID: 0}
   Bullet: {fileID: 0}
 --- !u!1001 &1109005300
 Prefab:
@@ -789,6 +833,14 @@ Prefab:
     - target: {fileID: 476732, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 484576, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 413624, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
@@ -994,7 +1046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1739212158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1140,7 @@ Transform:
   - {fileID: 784537314}
   - {fileID: 1880690985}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1739212164
 MonoBehaviour:
   m_ObjectHideFlags: 0
