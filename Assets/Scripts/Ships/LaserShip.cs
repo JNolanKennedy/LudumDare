@@ -55,14 +55,12 @@ public class LaserShip : BaseShip
 					if(hit[i].transform.name == "boundwall4" || hit[i].transform.name == "boundwall2")
 					{
 						endpoint = (Vector2)hit[i].point;
-						Debug.Log("HERE: " + endpoint);
 					}
 				}
 				if(this.endpoint.x == 0f && this.endpoint.y == -10f)
 				{
 					this.endpoint = (Vector2)this.transform.position + new Vector2(100,0);
 				}
-				Debug.Log("THERER: " + endpoint);
 				LR.SetPosition(1, (Vector3)endpoint);
 			}
 			if (this.Charge >= 2) {
