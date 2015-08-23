@@ -12,6 +12,8 @@ GameObject:
   - 95: {fileID: 9545452}
   - 50: {fileID: 5099712}
   - 61: {fileID: 6168364}
+  - 114: {fileID: 11434894}
+  - 114: {fileID: 11426106}
   m_Layer: 0
   m_Name: starship
   m_TagString: Enemy
@@ -77,6 +79,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11426106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f86d56653807494fbdd5c0c2c7d6df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11434894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c3d6e9875514c47a840bc47778fe0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 0}
+  Bullet: {fileID: 0}
 --- !u!212 &21242624
 SpriteRenderer:
   m_ObjectHideFlags: 1
