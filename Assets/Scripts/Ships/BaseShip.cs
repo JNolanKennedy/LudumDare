@@ -37,7 +37,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		SHbar = Instantiate (Resources.Load ("shield"), this.transform.position, this.transform.rotation) as GameObject;
 		SHbar.transform.parent = this.transform;
 		SHbar.transform.localPosition = new Vector3 (0,-1,-1);
-
+		Explosion = Resources.Load ("Sounds/NESExplosion") as AudioClip;
 	}
 	//This is the function you override by default for your own method calls during start
 	public virtual void overrideStart()
@@ -58,6 +58,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	
 	public virtual void OnDeath()
 	{
+		Debug.Log ("This: " + this.transform.name);
 		//Change Animation to EXPLOSION!!!!
 		this.HP = 0;
 		this.source.PlayOneShot(Explosion, 1);
