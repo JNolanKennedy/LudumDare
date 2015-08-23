@@ -18,6 +18,11 @@ public class Parasite : BaseShip {
 	{
 		//remove the AI controller on the ship
 		Destroy (ship.GetComponent (typeof(AI)));
+        foreach (SpriteRenderer child in ship.GetComponentsInChildren<SpriteRenderer>())
+        {
+            child.enabled = false;
+        }
+        ship.GetComponent<SpriteRenderer>().enabled = true;
 		//Flip the ship 180
 		ship.transform.rotation = this.transform.rotation;
 		ship.GetComponent<BoxCollider2D> ().isTrigger = false;

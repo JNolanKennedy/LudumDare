@@ -22,6 +22,8 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		//generic start for any future requirements
 		registerSelf ();
 		overrideStart ();
+        gameObject.GetComponentInChildren<healthbar>().start();
+        gameObject.GetComponentInChildren<shieldbar>().start();
 	}
 	//This is the function you override by default for your own method calls during start
 	public virtual void overrideStart()
