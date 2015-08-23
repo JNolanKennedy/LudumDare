@@ -22,6 +22,8 @@ public class LaserShipAI : AI {
         currentShip.Move(new Vector2(-1f, 0));
     }
 
+    //aaa
+
     public void Infect()
     {
         //do nothing

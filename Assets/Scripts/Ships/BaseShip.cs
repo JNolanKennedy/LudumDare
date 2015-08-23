@@ -76,6 +76,18 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		if (coll.gameObject.tag == "endwall") {
 			Destroy (this.gameObject);
 		}
+
+		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
+			ShipInterface si = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
+			si.TakeDamage(1);
+		}
+
+		overrideOnTriggerEnter2D (coll);
+	}
+
+	public virtual void overrideOnTriggerEnter2D(Collider2D coll)
+	{
+
 	}
 
 	public virtual bool TakeDamage(int val)

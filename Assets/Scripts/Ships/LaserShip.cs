@@ -22,6 +22,7 @@ public class LaserShip : BaseShip
 		this.Shooting = false;
 		LR = this.gameObject.AddComponent<LineRenderer> ();
 		LR.SetWidth (.8f, .8f);
+		this.transform.Rotate(new Vector3(0,0,180));
 	}
 
 	private void createLaser ()
@@ -35,12 +36,9 @@ public class LaserShip : BaseShip
 		this.Shooting = true;
 	}
 
-	public override void OnTriggerEnter2D(Collider2D coll)
+	public override void overrideOnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
-			ShipInterface si = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
-			si.TakeDamage(1);
-		}
+
 	}
 
 	public void Update()
