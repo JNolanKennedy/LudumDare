@@ -39,6 +39,12 @@ public class PlayerScript : MonoBehaviour {
 			}
             cooldown -= Time.deltaTime;
 		}
+
+		if (myShip == null) {
+			gameOver();
+			Destroy(this);
+		}
+
 	}
 
 	public void SetNewShip(GameObject ship) {
@@ -53,5 +59,13 @@ public class PlayerScript : MonoBehaviour {
 			pause = true;
 		else
 			pause = false;
+	}
+
+	private void gameOver()
+	{
+		persistentvars vars = GameObject.Find ("PersistentVarsManager").GetComponent<persistentvars> ();
+		vars.storeLevel (Application.loadedLevel);
+		vars.loadBetween ();
+		                                                                                   
 	}
 }
