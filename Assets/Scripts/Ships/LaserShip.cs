@@ -79,7 +79,7 @@ public class LaserShip : BaseShip
 				}
 				if(this.endpoint.x == 0f && this.endpoint.y == -10f)
 				{
-					this.endpoint = (Vector2)this.transform.position + new Vector2(100,0);
+					this.endpoint = (Vector2)this.transform.position + new Vector2(this.transform.right.x * 100,0);
 				}
 				LR.SetPosition(1, (Vector3)endpoint);
 			}
