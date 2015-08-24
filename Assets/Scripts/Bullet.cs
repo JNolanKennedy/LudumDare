@@ -9,7 +9,7 @@ public class Bullet : BaseBullet {
 		this.source = this.GetComponent<AudioSource>();
 		this.Damage = 1;
 		this.Speed = 500f;
-		this.source.PlayOneShot (shootSound, 1);
+		this.source.PlayOneShot (shootSound, .3f);
 		this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
 
 	}
