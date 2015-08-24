@@ -7,6 +7,9 @@ TagManager:
   - endwall
   - PlayerShip
   - Wall
+  - boundwall
+  - Enemy
+  - FakePara
   layers:
   - Default
   - TransparentFX

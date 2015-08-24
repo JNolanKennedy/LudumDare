@@ -18,24 +18,22 @@ public class Parasite : BaseShip {
 	{
 		//remove the AI controller on the ship
 		Destroy (ship.GetComponent (typeof(AI)));
-        foreach (SpriteRenderer child in ship.GetComponentsInChildren<SpriteRenderer>())
-        {
-            child.enabled = false;
-        }
-        ship.GetComponent<SpriteRenderer>().enabled = true;
 		//Flip the ship 180
 		ship.transform.rotation = this.transform.rotation;
 		ship.GetComponent<BoxCollider2D> ().isTrigger = false;
 		//Set the player to control this new ship now.
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		player.GetComponent<PlayerScript>().SetNewShip(ship);
+		BaseShip bs = ship.GetComponent ((typeof(BaseShip))) as BaseShip;
+		bs.SetParasite (true);
+		bs.AttatchParasite ();
 		//Delete your current ship, the infection guy.
-        this.transform.SetParent(ship.transform);
-        this.transform.localPosition = (ship.GetComponent((typeof(BaseShip))) as BaseShip).getAttachPoint();
-        Debug.Log((ship.GetComponent((typeof(BaseShip))) as BaseShip).getAttachPoint());
-        this.tag = "Untagged";
-        this.GetComponent<BoxCollider2D>().enabled = false;
-		//Destroy (this.gameObject);
+        //this.transform.SetParent(ship.transform);
+        //this.transform.localPosition = (ship.GetComponent((typeof(BaseShip))) as BaseShip).getAttachPoint();
+        //this.tag = "Untagged";
+        //this.GetComponent<BoxCollider2D>().enabled = false;
+		//this.enabled = false;
+		Destroy (this.gameObject);
 	}
 	
 	public override void OnTriggerEnter2D(Collider2D coll)
