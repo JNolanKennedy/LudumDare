@@ -92,9 +92,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124090}
-  m_Text: 'I am the winnist.
-
-    Forward onto victory!'
+  m_Text: SCREEEEEEEEEEEE
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -119,13 +117,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e36339a1c50a14bb6b88182f156658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextLevel: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: SCREEEEEEEEEEEE
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124090}
