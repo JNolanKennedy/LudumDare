@@ -30,4 +30,8 @@ public class BaseSpawner : MonoBehaviour {
 			endPass = true;
 		}
 	}
+	public void OnDrawGizmos()
+	{
+		Gizmos.DrawIcon (transform.position, "spawnbig.png", true);
+	}
 }
