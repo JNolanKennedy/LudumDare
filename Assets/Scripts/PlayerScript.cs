@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject myShip;
 	public GameObject paraShip;
 	ShipInterface currentShip;
-	private bool changing = false;
+	//private bool changing = false;
 	private bool pause;
     float cooldown;
 

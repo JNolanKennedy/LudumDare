@@ -23,7 +23,7 @@ public class BasicShipAI : AI {
         currentShip.Move(new Vector2(-1f, 0));
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return cooldownTotal;
     }
