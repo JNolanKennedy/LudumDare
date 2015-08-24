@@ -26,7 +26,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	void Start()
 	{
 		HP = 1;
-		Shield = 1;
+		Shield = 0;
 		invincibility = 0f;
 		//generic start for any future requirements
 
