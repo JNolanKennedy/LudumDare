@@ -9,6 +9,9 @@ public class LaserShip : BaseShip
 	LineRenderer LR;
 	private bool Shooting;
 	private int Damage;
+	private float tmpBar;
+
+	public GameObject ChargeBar;
 
 	// Use this for initialization
 	public override void overrideStart() {
@@ -28,6 +31,12 @@ public class LaserShip : BaseShip
 		//Color lazor = new Color (1, .1f, .1f, 1);
 		//LR.SetColors (lazor, lazor);
 		this.transform.Rotate(new Vector3(0,0,180));
+		this.tmpBar = 0;
+
+		ChargeBar = Instantiate (Resources.Load ("charge"), this.transform.position, this.transform.rotation) as GameObject;
+		ChargeBar.transform.parent = this.transform;
+		ChargeBar.GetComponent<SpriteRenderer> ().color = Color.magenta;
+		ChargeBar.transform.localPosition = new Vector3 (0,1,1);
 	}
 
 	private void createLaser ()
@@ -51,6 +60,10 @@ public class LaserShip : BaseShip
 
 	public override void overrideUpdate()
 	{
+		tmpBar = this.Charge / 1f;
+		if (tmpBar < 1f) {
+			ChargeBar.transform.localScale = new Vector3((this.Charge / 1f), 1,1);
+		}
 		if (this.Shooting) {
 			this.Speed = 0f;
 			this.Charge += Time.deltaTime;

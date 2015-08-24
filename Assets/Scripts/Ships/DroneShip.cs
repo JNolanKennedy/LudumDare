@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class DroneShip : BaseShip {
+
     GameObject player;
     private bool Shooting;
 	public GameObject Bullet;
