@@ -20,6 +20,10 @@ public class GatShip : BaseShip {
 
 	public override void overrideUpdate()
 	{
+		if (overheat == 1f) {
+			cooldown = .15f;
+			overheat = 0;
+		}
 	}
 
     public override void Shoot()
