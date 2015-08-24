@@ -50,19 +50,17 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	}
 
 	void Update() {
-		//Invincability code
-		if (this.invincibility > 0) {
-			this.GetComponent<SpriteRenderer> ().color = Color.yellow;
-			this.invincibility -= Time.deltaTime;
-		} else if (this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincibility <= 0) {
-			this.GetComponent<SpriteRenderer> ().color = Color.white;
-			this.invincibility -= Time.deltaTime;
-		}
-		if (hasParasite) {
-			this.AttatchParasite();
-		}
-		if (!pause)
+		if (!pause) {
+			//Invincability code
+			if (this.invincibility > 0) {
+				this.GetComponent<SpriteRenderer> ().color = Color.yellow;
+				this.invincibility -= Time.deltaTime;
+			} else if (this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincibility <= 0) {
+				this.GetComponent<SpriteRenderer> ().color = Color.white;
+				this.invincibility -= Time.deltaTime;
+			}
 			overrideUpdate ();
+		}
 	}
 	
 	public virtual void overrideUpdate()
