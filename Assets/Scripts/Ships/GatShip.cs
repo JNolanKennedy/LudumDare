@@ -11,7 +11,7 @@ public class GatShip : BaseShip {
     public override void overrideStart()
     {
         this.HP = 3;
-        this.Shield = 2;
+        this.Shield = 1;
         this.Speed = .1f;
         this.AttachPoint = new Vector3(-.6f, -.08f, -1);
         this.Shooting = false;

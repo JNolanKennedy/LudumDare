@@ -18,6 +18,7 @@ public class BaseSpawner : MonoBehaviour {
 			if (spawntime <= 0)
 			{
 				Instantiate (prefabSpawn,this.transform.position,this.transform.rotation);
+				Destroy(this.gameObject);
 			}
 		}
 	

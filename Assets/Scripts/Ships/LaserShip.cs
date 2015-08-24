@@ -13,7 +13,7 @@ public class LaserShip : BaseShip
 	// Use this for initialization
 	public override void overrideStart() {
 		this.HP = 3;
-		this.Shield = 0;
+		this.Shield = 2;
 		this.Speed = .1f;
 		this.AttachPoint = new Vector3(-.15f, -.06f, -1);
 		this.Charge = 0;

@@ -11,7 +11,7 @@ public class BasicShip : BaseShip {
     public override void overrideStart()
     {
         this.HP = 2;
-        this.Shield = 1;
+        this.Shield = 0;
         this.Speed = .075f;
         //this.Damage = 2;
         this.AttachPoint = new Vector3(-.4f, -.05f, -1);
