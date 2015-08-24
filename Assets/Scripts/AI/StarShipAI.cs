@@ -3,7 +3,6 @@ using System.Collections;
 
 public class StarShipAI : AI {
 
-    bool isPlayer = false;
     Transform player;
 
     // Update is called once per frame

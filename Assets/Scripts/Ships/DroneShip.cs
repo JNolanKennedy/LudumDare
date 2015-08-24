@@ -51,14 +51,5 @@ public class DroneShip : BaseShip {
 			this.setSpeed ();
 			this.Shooting = false;
 		}
-
-		if (this.tag == "PlayerShip" && this.invincablity > 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.yellow;
-			this.invincablity -= Time.deltaTime;
-		}
-		else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer>().color != Color.white && this.invincablity <= 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.white;
-			this.invincablity -= Time.deltaTime;
-		}
 	}
 }
