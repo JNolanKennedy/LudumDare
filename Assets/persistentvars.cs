@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class persistentvars : MonoBehaviour {
-	int lastlevel;
+	int lastlevel = -1;
+	string stringlastlevel = "";
+	string leveltext;
 
 
 	// Use this for initialization
@@ -31,6 +33,31 @@ public class persistentvars : MonoBehaviour {
 
 	public void loadLast()
 	{
-		Application.LoadLevel (lastlevel);
+		if (lastlevel != -1)
+			Application.LoadLevel (lastlevel);
+		else if (stringlastlevel != "")
+			Application.LoadLevel (stringlastlevel);
+
+		lastlevel = -1;
+		stringlastlevel = "";
+	}
+
+	public void loadNext(int level, string levelname)
+	{
+		this.lastlevel = level;
+		this.leveltext = levelname;
+		Invoke ("idontevencareanymore", 1);
+	}
+
+	public void loadNext(string level, string levelname)
+	{
+		this.stringlastlevel = level;
+		this.leveltext = levelname;
+		Invoke ("idontevencareanymore", 1);
+	}
+
+	public string returnLevelName()
+	{
+		return stringlastlevel;
 	}
 }
