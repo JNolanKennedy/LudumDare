@@ -52,6 +52,14 @@ public class PlayerScript : MonoBehaviour {
 		this.SetNewShip(newPara);
 	}
 
+	public bool Alive()
+	{
+		if (this.currentShip.getHP () > 0) {
+			return true;
+		}
+		return false;
+	}
+
 	public void SetNewShip(GameObject ship) {
 		this.myShip = ship;
 		myShip.tag = "PlayerShip";
