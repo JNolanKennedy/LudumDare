@@ -11,7 +11,7 @@ public interface ShipInterface
 	int getShields();
 	void OnTriggerEnter2D(Collider2D coll);
 	bool getIsParasite();
-
+	int getHP();
     float getCooldown();
 
 }
