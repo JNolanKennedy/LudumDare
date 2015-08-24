@@ -13,8 +13,8 @@ public class textrandomizer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		txt = this.gameObject.GetComponent<Text> ();
-		num = Random.Range (0, 100);
-		if (num == 0)
+		num = Random.Range (1, 75);
+		if (num == 1)
 		{
 			num = Random.Range (0, 5);
 			if (num == 5)
@@ -25,6 +25,10 @@ public class textrandomizer : MonoBehaviour {
 				hiddentext = "AAAAAAAAAAAAAAAAAAAAAAAAAA";
 			else if (num == 2)
 				hiddentext = "DON'T LOOK BEHIND YOU";
+			else if (num == 1)
+				hiddentext = "WRITHE AND SQUIRM";
+			else if (num == 0)
+				hiddentext = "WE RISE";
 		}
 	
 	}
