@@ -18,6 +18,7 @@ public class BasicShip : BaseShip {
         this.source = this.GetComponent<AudioSource>();
         Shooting = false;
         this.transform.Rotate(Vector3.forward * 180);
+		this.tier = 1;
     }
 
     public override void Shoot()

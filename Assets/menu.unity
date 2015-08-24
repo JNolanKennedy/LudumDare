@@ -914,7 +914,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Parasitic Worm Simulator
+  m_Text: 'P-Type
 
     2015'
 --- !u!222 &949575096
@@ -1054,6 +1054,54 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: nextText
       objectReference: {fileID: 0}
+    - target: {fileID: 22435940, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -56.4000092
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456868, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419944, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_Text
+      value: Return to Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419944, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431092, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 10.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431092, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 57.5999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419944, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404254, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 22416736, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431092, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 22424392, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.30000019
+      objectReference: {fileID: 0}
+    - target: {fileID: 22424392, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -23.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
@@ -1162,7 +1210,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1195675479
@@ -1181,7 +1229,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1279,8 +1327,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10.3999996, y: -10}
+  m_SizeDelta: {x: 57.5999985, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1317288486
 MonoBehaviour:
@@ -1298,7 +1346,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1308,7 +1356,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Return to Main
 --- !u!222 &1317288487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1465,7 +1513,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 10}
+  m_AnchoredPosition: {x: -23.5, y: 4.30000019}
   m_SizeDelta: {x: 40, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1842017796
@@ -1698,7 +1746,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1743,6 +1791,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -51.5}
+  m_AnchoredPosition: {x: 0, y: -56.4000092}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: .5, y: .5}

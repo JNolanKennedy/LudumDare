@@ -64,6 +64,7 @@ public class PlayerScript : MonoBehaviour {
 		this.myShip = ship;
 		myShip.tag = "PlayerShip";
 		this.currentShip = myShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
+		myShip.GetComponent<BaseShip> ().setSpeed (2);
 	}
 
 	private void PauseHandler()
