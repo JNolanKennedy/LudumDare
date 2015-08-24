@@ -6,6 +6,7 @@ public class WinCondition : MonoBehaviour {
 	private bool endPass = false;
 	GameObject playerShip;
 	PlayerScript playa;
+	public string NextLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -35,9 +36,7 @@ public class WinCondition : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll) {
 
 		if (coll.gameObject.name == "boundwall2") {
-			if (Application.loadedLevelName == "level1") {
-				Application.LoadLevel("level3");
-			}
+			Application.LoadLevel(NextLevel);
 		}
 	}
 }
