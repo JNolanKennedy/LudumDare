@@ -66,7 +66,7 @@ public class LaserShip : BaseShip
 							enem.TakeDamage (this.Damage);
 						}
 					}
-					else if (this.tag == "Enenmy") {
+					else if (this.tag == "Enemy") {
 						if (hit[i].transform.tag == "PlayerShip") {
 							ShipInterface playa = hit[i].transform.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
 							playa.TakeDamage (this.Damage);

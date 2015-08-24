@@ -3,10 +3,9 @@ using System.Collections;
 
 public class GatShip : BaseShip {
 
-    private bool Shooting;
     public GameObject Bullet;
     float cooldown = .15f;
-
+	float overheat;
 
     public override void overrideStart()
     {
@@ -14,21 +13,32 @@ public class GatShip : BaseShip {
         this.Shield = 1;
         this.Speed = .1f;
         this.AttachPoint = new Vector3(-.6f, -.08f, -1);
-        this.Shooting = false;
         this.source = this.GetComponent<AudioSource>();
         this.transform.Rotate(Vector3.forward * 180);
+		this.overheat = 0;
     }
+
+	public override void overrideUpdate()
+	{
+		if (overheat == 1f) {
+			cooldown = .15f;
+			overheat = 0;
+		}
+	}
 
     public override void Shoot()
     {
-        if (!this.Shooting)
-        {
-            this.Shooting = true;
+        if (overheat < .5f) {
+			overheat += Time.deltaTime*2;
+			cooldown = .15f;
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
             BaseBullet BI = clone.GetComponent(typeof(BaseBullet)) as BaseBullet;
             BI.OnShoot(transform.right, this.tag);
-            this.Shooting = false;
         }
+		if (overheat >= .5f) {
+			cooldown = 1f;
+			overheat = 1f;
+		}
     }
     public override float getCooldown()
     {

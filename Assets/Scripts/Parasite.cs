@@ -8,7 +8,7 @@ public class Parasite : BaseShip {
 	public override void overrideStart () {
 		this.HP = 3;
 		this.Shield = 0;
-		this.Speed = .1f;
+		this.Speed = .18f;
 		this.AttachPoint = new Vector2(0, 3);
 		this.isParasite = true;
 		this.source = this.GetComponent<AudioSource>();
