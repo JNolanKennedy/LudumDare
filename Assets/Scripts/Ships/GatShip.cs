@@ -28,7 +28,6 @@ public class GatShip : BaseShip {
 
     public override void Shoot()
     {
-		Debug.Log (overheat);
         if (overheat < .5f) {
 			overheat += Time.deltaTime*2;
 			cooldown = .15f;
