@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class levelmovement : MonoBehaviour {
-	float speed = 0.1f;
+	public float speed = 0.1f;
 	bool pause = false;
 
 	// Use this for initialization
