@@ -26,7 +26,7 @@ public class SwerveShip : BaseShip {
             this.Shooting = true;
             GameObject clone = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
             BaseBullet BI = clone.GetComponent(typeof(BaseBullet)) as BaseBullet;
-            BI.OnShoot(Vector3.left, this.tag);
+            BI.OnShoot(this.transform.right, this.tag);
             this.Shooting = false;
         }
     }
