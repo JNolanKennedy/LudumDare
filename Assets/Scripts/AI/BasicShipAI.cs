@@ -4,7 +4,7 @@ using System.Collections;
 public class BasicShipAI : AI {
 
     float cooldownTotal = .6f;
-    float cooldown = .6f;
+    float cooldown = 2.8f;
 
     // Update is called once per frame
     public override void overrideUpdate()
@@ -13,7 +13,7 @@ public class BasicShipAI : AI {
         if (cooldown <= 0)
         {
             currentShip.Shoot();
-            cooldown = .6f;
+            cooldown = 2.8f;
         }
         cooldown = cooldown - Time.deltaTime;
     }
