@@ -16,6 +16,8 @@ public class PauseManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ((Input.GetKeyDown("escape") && pause == false) || death == true && pause == false) {
+			if (!death)
+				this.GetComponent<AudioSource>().Play();
 			foreach (GameObject obj in registeredObjects) {
 				if (obj == null)
 				{
@@ -44,6 +46,7 @@ public class PauseManager : MonoBehaviour {
 		} 
 		else if(Input.GetKeyDown("escape") && death != true)
 		{
+			this.GetComponent<AudioSource>().Play();
 			foreach (GameObject obj in registeredObjects) {
 				if (obj == null)
 				{
