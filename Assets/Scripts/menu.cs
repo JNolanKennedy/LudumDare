@@ -23,9 +23,9 @@ public class menu : MonoBehaviour {
         
         instructions.SetActive(true);
 		instructions.GetComponentInChildren<Text> ().text = "You are a highly-advanced lifeform created for the purpose of destroying the human race.\n\n" +
-			"Move with WASD or the arrow keys.\n\n" +
-			"Use Spacebar to shoot while inside of a ship and left shift to release your host.\n\n" +
-			"ESC to pause the game.\n\n" +
+			"Move with WASD, arrow keys or control stick.\n\n" +
+			"Use Spacebar or A to shoot (only while possessing a ship). Left shift or B to release your host.\n\n" +
+			"ESC or Y to pause the game.\n\n" +
 			"You can only infest ships when their shield is depleted.";
         next.SetActive(true);
     }
