@@ -11,7 +11,7 @@ public class GatShipAI : AI {
         if (cooldown <= 0)
         {
             currentShip.Shoot();
-            cooldown = .15f;
+            cooldown = currentShip.getCooldown();
         }
         cooldown = cooldown - Time.deltaTime;
     }
