@@ -33,9 +33,7 @@ public class PlayerScript : MonoBehaviour {
                     cooldown = currentShip.getCooldown();
                 }
 			} else if (Input.GetButtonDown ("Eject") && !this.currentShip.getIsParasite()) {
-				GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;
-				currentShip.OnDeath();
-				this.SetNewShip(newPara);
+				this.Eject();
 			}
             cooldown -= Time.deltaTime;
 		}
@@ -45,6 +43,13 @@ public class PlayerScript : MonoBehaviour {
 			Destroy(this);
 		}
 
+	}
+
+	public void Eject()
+	{
+		GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;
+		currentShip.OnDeath();
+		this.SetNewShip(newPara);
 	}
 
 	public void SetNewShip(GameObject ship) {

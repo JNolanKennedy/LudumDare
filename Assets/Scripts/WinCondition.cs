@@ -13,12 +13,13 @@ public class WinCondition : MonoBehaviour {
 	void Update () {
 		if (endPass == true) {
 			this.GetComponent<MeshRenderer>().enabled = true;
-			//this.transform.position = 
+			PlayerScript playa = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerScript>();
+			//playa.Eject();
 			playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
-			(GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerScript>().enabled = false;
 			ShipInterface si = playerShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 			Destroy(playerShip.GetComponent<Rigidbody2D>());
 			si.Move(new Vector2(1, .5f));
+			playa.enabled = false;
 		}
 	}
 	
@@ -33,9 +34,9 @@ public class WinCondition : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll) {
 
 		if (coll.gameObject.name == "boundwall2") {
-			Debug.Log ("YOU ARE THE WINNERIST:  " + coll.name);
-			//Go to next level or end the game or whatever.
-			Application.Quit();
+			if (Application.loadedLevelName == "level1") {
+				Application.LoadLevel("level3");
+			}
 		}
 	}
 }
