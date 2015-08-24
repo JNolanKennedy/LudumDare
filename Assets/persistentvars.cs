@@ -6,6 +6,7 @@ public class persistentvars : MonoBehaviour {
 	int lastlevel = -1;
 	string stringlastlevel = "";
 	string leveltext;
+	int score;
 
 
 	// Use this for initialization

@@ -4,6 +4,7 @@ using System.Collections;
 public class BaseSpawner : MonoBehaviour {
 	public GameObject prefabSpawn;
 	private bool endPass = false;
+	float timer = 0.25f;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,10 +12,11 @@ public class BaseSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (endPass == true) {
-            Instantiate(prefabSpawn, this.transform.position, this.transform.rotation);
-            Destroy(gameObject);
-		}
+		if (endPass == true & timer <= 0) {
+			Instantiate (prefabSpawn, this.transform.position, this.transform.rotation);
+			Destroy (gameObject);
+		} else if (endPass == true)
+			timer = timer - Time.deltaTime;
 	}
 
 	public void OnTriggerExit2D(Collider2D coll)
