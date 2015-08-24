@@ -7,6 +7,8 @@ public class WinCondition : MonoBehaviour {
 	GameObject playerShip;
 	PlayerScript playa;
 	public string NextLevel;
+	private bool istime = false;
+	ShipInterface si;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +19,14 @@ public class WinCondition : MonoBehaviour {
 			this.GetComponent<MeshRenderer>().enabled = true;
 			//playa.Eject();
 			playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
-			ShipInterface si = playerShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			si = playerShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 			Destroy(playerShip.GetComponent<Rigidbody2D>());
-			si.Move(new Vector2(1, .5f));
 			playa.enabled = false;
+			endPass = false;
+			istime = true;
 		}
+		if (istime)
+			si.Move(new Vector2(1, .5f));
 	}
 	
 	public void OnTriggerExit2D(Collider2D coll)
@@ -36,7 +41,8 @@ public class WinCondition : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll) {
 
 		if (coll.gameObject.name == "boundwall2") {
-			Application.LoadLevel(NextLevel);
+			persistentvars vars = GameObject.Find ("PersistentVarsManager").GetComponent<persistentvars> ();
+			vars.loadNext(NextLevel, NextLevel);
 		}
 	}
 }
