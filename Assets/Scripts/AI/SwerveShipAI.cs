@@ -4,7 +4,7 @@ using System.Collections;
 public class SwerveShipAI : AI {
 
     float cooldownTotal = .3f;
-    float cooldown = .3f;
+    float cooldown = .6f;
     float move = 1.5f;
 
     // Update is called once per frame
@@ -14,7 +14,7 @@ public class SwerveShipAI : AI {
         if (cooldown <= 0)
         {
             currentShip.Shoot();
-            cooldown = .3f;
+            cooldown = .6f;
         }
         cooldown = cooldown - Time.deltaTime;
     }

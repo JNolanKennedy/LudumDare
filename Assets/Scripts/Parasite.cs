@@ -6,7 +6,7 @@ public class Parasite : BaseShip {
 	
 	// Use this for initialization
 	public override void overrideStart () {
-		this.HP = 100;
+		this.HP = 3;
 		this.Shield = 0;
 		this.Speed = .1f;
 		this.AttachPoint = new Vector2(0, 3);
