@@ -25,7 +25,7 @@ public class PauseManager : MonoBehaviour {
 				}
 				else
 				{
-					obj.BroadcastMessage("PauseHandler");
+					obj.SendMessage("PauseHandler");
 					rbod = obj.GetComponent<Rigidbody2D>();
 					bcol = obj.GetComponent<BoxCollider2D>();
 
@@ -68,7 +68,7 @@ public class PauseManager : MonoBehaviour {
 					}
 
 					pause = false;
-					obj.BroadcastMessage("PauseHandler", 0);
+					obj.SendMessage("PauseHandler", 0);
 				}
 			}
 		}

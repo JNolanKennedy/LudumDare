@@ -966,7 +966,6 @@ GameObject:
   - 4: {fileID: 990986889}
   - 114: {fileID: 990986890}
   - 114: {fileID: 990986891}
-  - 114: {fileID: 990986892}
   m_Layer: 0
   m_Name: LevelMover
   m_TagString: Untagged
@@ -1013,18 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c17883906e2e5e4e87dc1a7918cca67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &990986892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990986888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 0}
 --- !u!4 &1002166805 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420054, guid: 73b5b3524d1a35e44993acfc15b0659a, type: 2}
@@ -1318,22 +1305,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 492740, guid: 09fcd8bfa77a71a43852be519f6431f0, type: 2}
   m_PrefabInternal: {fileID: 726224062}
---- !u!1 &1307609802 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 108092, guid: 8143ad89a9e614e48bfc0c61077aa363, type: 2}
-  m_PrefabInternal: {fileID: 161539730}
---- !u!114 &1307609805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1307609802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 0}
 --- !u!4 &1364726968 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420054, guid: 73b5b3524d1a35e44993acfc15b0659a, type: 2}

@@ -1731,7 +1731,6 @@ GameObject:
   - 4: {fileID: 990986889}
   - 114: {fileID: 990986890}
   - 114: {fileID: 990986891}
-  - 114: {fileID: 990986892}
   m_Layer: 0
   m_Name: LevelMover
   m_TagString: Untagged
@@ -1795,18 +1794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c17883906e2e5e4e87dc1a7918cca67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &990986892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990986888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 0}
 --- !u!1 &1009551205 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 188772, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
