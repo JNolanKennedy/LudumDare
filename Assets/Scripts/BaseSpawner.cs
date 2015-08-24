@@ -13,18 +13,12 @@ public class BaseSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (endPass == true) {
-			spawntime -= Time.deltaTime;
-
-			if (spawntime <= 0)
-			{
-				Instantiate (prefabSpawn,this.transform.position,this.transform.rotation);
-				Destroy(this.gameObject);
-			}
+            Instantiate(prefabSpawn, this.transform.position, this.transform.rotation);
+            Destroy(gameObject);
 		}
-	
 	}
 
-	public void OnTriggerEnter2D(Collider2D coll)
+	public void OnTriggerExit2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "endwall")
 		{

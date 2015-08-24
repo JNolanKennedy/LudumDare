@@ -31,6 +31,11 @@ public class SwerveShip : BaseShip {
         }
     }
 
+    public override float getCooldown()
+    {
+        return cooldown;
+    }
+
     public override void overrideOnTriggerEnter2D(Collider2D coll)
     {
 
