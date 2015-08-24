@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour {
 	bool pause = false;
+	bool death = false;
 	Rigidbody2D rbod;
 	BoxCollider2D bcol;
 	public List<GameObject> registeredObjects = new List<GameObject> ();
@@ -14,7 +15,7 @@ public class PauseManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("escape") && pause == false) {
+		if ((Input.GetKeyDown("escape") && pause == false) || death == true && pause == false) {
 			foreach (GameObject obj in registeredObjects) {
 				if (obj == null)
 				{
@@ -41,7 +42,7 @@ public class PauseManager : MonoBehaviour {
 
 			}
 		} 
-		else if(Input.GetKeyDown("escape"))
+		else if(Input.GetKeyDown("escape") && death != true)
 		{
 			foreach (GameObject obj in registeredObjects) {
 				if (obj == null)
@@ -80,6 +81,10 @@ public class PauseManager : MonoBehaviour {
 	public void deregisterObject(GameObject obj)
 	{
 		this.registeredObjects.Remove (obj);
+	}
+	public void gameOver()
+	{
+		death = true;
 	}
 
 }

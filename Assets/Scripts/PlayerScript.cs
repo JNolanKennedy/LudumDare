@@ -52,6 +52,14 @@ public class PlayerScript : MonoBehaviour {
 		this.SetNewShip(newPara);
 	}
 
+	public bool Alive()
+	{
+		if (this.currentShip.getHP () > 0) {
+			return true;
+		}
+		return false;
+	}
+
 	public void SetNewShip(GameObject ship) {
 		this.myShip = ship;
 		myShip.tag = "PlayerShip";
@@ -68,9 +76,11 @@ public class PlayerScript : MonoBehaviour {
 
 	private void gameOver()
 	{
+		GameObject.Find ("GameManager").GetComponent<PauseManager> ().gameOver ();
 		persistentvars vars = GameObject.Find ("PersistentVarsManager").GetComponent<persistentvars> ();
 		vars.storeLevel (Application.loadedLevel);
-		vars.loadBetween ();
+		vars.loadBetween (true);
+		Destroy (this.gameObject);
 		                                                                                   
 	}
 }

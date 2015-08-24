@@ -32,30 +32,6 @@ public class ElectroShip : BaseShip
         }
 	}
 
-    public override bool TakeDamage(int val)
-    {
-        if (this.Shield <= 0)
-        {
-            this.Shield = 0;
-            Speed = 0;
-            if (this.HP > 0)
-            {
-                this.HP -= val;
-            }
-        }
-        else
-        {
-            this.Shield -= val;
-        }
-
-        if (this.HP <= 0)
-        {
-            OnDeath();
-            return true;
-        }
-        return false;
-    }
-
     public override float getCooldown()
     {
         return cooldown;

@@ -5,6 +5,8 @@ public class WinCondition : MonoBehaviour {
 
 	private bool endPass = false;
 	GameObject playerShip;
+	PlayerScript playa;
+	public string NextLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +15,6 @@ public class WinCondition : MonoBehaviour {
 	void Update () {
 		if (endPass == true) {
 			this.GetComponent<MeshRenderer>().enabled = true;
-			PlayerScript playa = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerScript>();
 			//playa.Eject();
 			playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
 			ShipInterface si = playerShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
@@ -25,7 +26,8 @@ public class WinCondition : MonoBehaviour {
 	
 	public void OnTriggerExit2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "endwall")
+		playa = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerScript>();
+		if (coll.gameObject.tag == "endwall" && playa.Alive())
 		{
 			endPass = true;
 		}
@@ -34,9 +36,7 @@ public class WinCondition : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll) {
 
 		if (coll.gameObject.name == "boundwall2") {
-			if (Application.loadedLevelName == "level1") {
-				Application.LoadLevel("level3");
-			}
+			Application.LoadLevel(NextLevel);
 		}
 	}
 }
