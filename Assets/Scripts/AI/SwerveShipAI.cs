@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SwerveShipAI : AI {
 
+    float cooldownTotal = .3f;
     float cooldown = .3f;
     float move = 1.5f;
 
@@ -29,6 +30,11 @@ public class SwerveShipAI : AI {
         {
             move = move * -1;
         }
+    }
+
+    public float getCoolDown()
+    {
+        return cooldownTotal;
     }
     public void Infect()
     {

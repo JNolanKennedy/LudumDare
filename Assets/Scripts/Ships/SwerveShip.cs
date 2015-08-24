@@ -5,6 +5,7 @@ public class SwerveShip : BaseShip {
 
     private bool Shooting;
     public GameObject Bullet;
+    float cooldown = .3f;
 
     // Use this for initialization
     public override void overrideStart()

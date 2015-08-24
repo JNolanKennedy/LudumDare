@@ -6,6 +6,7 @@ public class DroneShip : BaseShip {
     private bool Shooting;
 	public GameObject Bullet;
 	private float time = 1f;
+    float cooldown = 1;
 
     // Use this for initialization   
     public override void overrideStart()
@@ -42,7 +43,10 @@ public class DroneShip : BaseShip {
     {
 
     }
-
+    public override float getCooldown()
+    {
+        return cooldown;
+    }
 	public override void overrideUpdate()
 	{
 		if (this.time > 0)

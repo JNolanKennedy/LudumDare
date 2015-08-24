@@ -5,6 +5,7 @@ public class ElectroShipAI : AI
 {
     Transform player;
     float cooldown = .6f;
+    float cooldownTotal = .6f;
 
     // Update is called once per frame
 	public override void overrideUpdate ()
@@ -34,7 +35,10 @@ public class ElectroShipAI : AI
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
-
+    public float getCoolDown()
+    {
+        return cooldownTotal;
+    }
     public void Infect()
     {
         //do nothing

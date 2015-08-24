@@ -107,6 +107,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		}
 		Destroy(this.gameObject, 1f);
 	}
+
 	
 	public virtual void Upgrade()
 	{
@@ -171,6 +172,11 @@ public class BaseShip : MonoBehaviour, ShipInterface {
     public virtual Vector3 getAttachPoint()
     {
         return AttachPoint;
+    }
+
+    public virtual float getCooldown()
+    {
+        return 0;
     }
 
 	public virtual int getShields() 

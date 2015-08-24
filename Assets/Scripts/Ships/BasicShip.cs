@@ -5,6 +5,7 @@ public class BasicShip : BaseShip {
 
     private bool Shooting;
     public GameObject Bullet;
+    float cooldown = .6f;
 
     // Use this for initialization
     public override void overrideStart()
@@ -34,5 +35,10 @@ public class BasicShip : BaseShip {
     public override void overrideOnTriggerEnter2D(Collider2D coll)
     {
 
+    }
+
+    public override float getCooldown()
+    {
+        return cooldown;
     }
 }

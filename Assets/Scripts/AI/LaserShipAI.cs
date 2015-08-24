@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LaserShipAI : AI {
 
+    float cooldownTotal = 3.6f;
     float cooldown = 3.6f;
 
     // Update is called once per frame
@@ -22,7 +23,10 @@ public class LaserShipAI : AI {
         currentShip.Move(new Vector2(-1f, 0));
     }
 
-    //aaa
+    public float getCoolDown()
+    {
+        return cooldownTotal;
+    }
 
     public void Infect()
     {
