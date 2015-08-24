@@ -1029,7 +1029,7 @@ Prefab:
     - target: {fileID: 11415208, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1842017795}
+      objectReference: {fileID: 0}
     - target: {fileID: 11415208, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: destroySelf
@@ -1046,7 +1046,16 @@ Prefab:
       propertyPath: next
       value: 
       objectReference: {fileID: 1842017793}
-    m_RemovedComponents: []
+    - target: {fileID: 11415208, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 727394071}
+    - target: {fileID: 11415208, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: nextText
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: e69818167cbc4df47a7ce4c38015c598, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1186716800
@@ -1433,7 +1442,6 @@ GameObject:
   - 222: {fileID: 1842017798}
   - 114: {fileID: 1842017797}
   - 114: {fileID: 1842017796}
-  - 114: {fileID: 1842017795}
   m_Layer: 5
   m_Name: next
   m_TagString: Untagged
@@ -1460,20 +1468,6 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 10}
   m_SizeDelta: {x: 40, y: 30}
   m_Pivot: {x: 1, y: 0}
---- !u!114 &1842017795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11479264, guid: e69818167cbc4df47a7ce4c38015c598,
-    type: 2}
-  m_PrefabInternal: {fileID: 1183628320}
-  m_GameObject: {fileID: 1842017793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43bb86278c9976c4c97caa5b6edfa135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instructions: {fileID: 0}
-  next: {fileID: 0}
 --- !u!114 &1842017796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,7 +1508,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053271287}
+      - m_Target: {fileID: 727394071}
         m_MethodName: nextText
         m_Mode: 1
         m_Arguments:
@@ -1614,7 +1608,6 @@ GameObject:
   - 224: {fileID: 1935833050}
   - 222: {fileID: 1935833053}
   - 114: {fileID: 1935833052}
-  - 114: {fileID: 1935833051}
   m_Layer: 5
   m_Name: InstructionPanel
   m_TagString: Untagged
@@ -1643,20 +1636,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1935833051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11403322, guid: e69818167cbc4df47a7ce4c38015c598,
-    type: 2}
-  m_PrefabInternal: {fileID: 1183628320}
-  m_GameObject: {fileID: 1935833049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43bb86278c9976c4c97caa5b6edfa135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instructions: {fileID: 0}
-  next: {fileID: 0}
 --- !u!114 &1935833052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,7 +1675,6 @@ GameObject:
   - 224: {fileID: 2053271290}
   - 222: {fileID: 2053271289}
   - 114: {fileID: 2053271288}
-  - 114: {fileID: 2053271287}
   m_Layer: 5
   m_Name: InstructionText
   m_TagString: Untagged
@@ -1704,20 +1682,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2053271287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11464510, guid: e69818167cbc4df47a7ce4c38015c598,
-    type: 2}
-  m_PrefabInternal: {fileID: 1183628320}
-  m_GameObject: {fileID: 2053271286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43bb86278c9976c4c97caa5b6edfa135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instructions: {fileID: 0}
-  next: {fileID: 1842017793}
 --- !u!114 &2053271288
 MonoBehaviour:
   m_ObjectHideFlags: 0
