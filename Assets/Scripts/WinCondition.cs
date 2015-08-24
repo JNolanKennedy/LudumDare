@@ -15,7 +15,7 @@ public class WinCondition : MonoBehaviour {
 			this.GetComponent<MeshRenderer>().enabled = true;
 			//this.transform.position = 
 			playerShip = GameObject.FindGameObjectWithTag("PlayerShip");
-			//playerShip.GetComponent<PlayerScript>().enabled = false;
+			(GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerScript>().enabled = false;
 			ShipInterface si = playerShip.GetComponent (typeof(ShipInterface)) as ShipInterface;
 			Destroy(playerShip.GetComponent<Rigidbody2D>());
 			si.Move(new Vector2(1, .5f));
