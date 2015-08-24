@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .200557977, g: .83088237, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -916,7 +916,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'P-Type
 
-    2015'
+    Ludum Dare 6/15'
 --- !u!222 &949575096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1262,7 +1262,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 442160, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.36196709
+      value: .779999971
       objectReference: {fileID: 0}
     - target: {fileID: 442160, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1286,7 +1286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 442160, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11492610, guid: 65265f25ef1cc7443b3d2ba4b44fc84c, type: 2}
