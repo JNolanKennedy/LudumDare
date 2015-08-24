@@ -3,11 +3,13 @@ using System.Collections;
 
 public class FastShipAI : AI {
     Transform player;
+    float cooldownTotal = .3f;
     float cooldown = .3f;
 
 	// Use this for initialization
 	public override void overrideStart () {
 		this.transform.Rotate (Vector3.forward * 180);
+        cooldownTotal = cooldown;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,10 @@ public class FastShipAI : AI {
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
+    public float getCooldown()
+    {
+        return cooldownTotal;
+    }
     public void Infect()
     {
         //do nothing

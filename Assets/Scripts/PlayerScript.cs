@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	ShipInterface currentShip;
 	private bool changing = false;
 	private bool pause;
+    float cooldown;
 
 	// Use this for initialization
 	void Start () {
@@ -25,13 +26,18 @@ public class PlayerScript : MonoBehaviour {
 	void Update ()
 	{
 		if (!pause) {
-			if (Input.GetButtonDown ("Jump") || Input.GetButtonDown ("Fire1")) {
-				currentShip.Shoot ();
+			if (Input.GetButton ("Jump") || Input.GetButton ("Fire1")) {
+                if (cooldown <= 0)
+                {
+                    currentShip.Shoot();
+                    cooldown = currentShip.getCooldown();
+                }
 			} else if (Input.GetButtonDown ("Eject") && !this.currentShip.getIsParasite()) {
 				GameObject newPara = Instantiate(paraShip, myShip.transform.position, myShip.transform.rotation) as GameObject;
 				currentShip.OnDeath();
 				this.SetNewShip(newPara);
 			}
+            cooldown -= Time.deltaTime;
 		}
 	}
 

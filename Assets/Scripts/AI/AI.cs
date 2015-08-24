@@ -45,4 +45,9 @@ public class AI: MonoBehaviour
 		else
 			pause = false;
 	}
+
+    public virtual float getCooldown()
+    {
+        return 0;
+    }
 }

@@ -5,11 +5,13 @@ public class GatShip : BaseShip {
 
     private bool Shooting;
     public GameObject Bullet;
+    float cooldown = .15f;
+
 
     public override void overrideStart()
     {
         this.HP = 3;
-        this.Shield = 2;
+        this.Shield = 1;
         this.Speed = .1f;
         this.AttachPoint = new Vector3(-.6f, -.08f, -1);
         this.Shooting = false;
@@ -28,7 +30,10 @@ public class GatShip : BaseShip {
             this.Shooting = false;
         }
     }
-
+    public override float getCooldown()
+    {
+        return cooldown;
+    }
     public override void overrideOnTriggerEnter2D(Collider2D coll)
     {
 

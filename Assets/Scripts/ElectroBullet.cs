@@ -11,7 +11,7 @@ public class ElectroBullet : BaseBullet
         this.source = this.GetComponent<AudioSource>();
         this.Damage = 1;
         this.Speed = 300f;
-        this.source.PlayOneShot(shootSound, 1);
+        this.source.PlayOneShot(shootSound, .7f);
         this.GetComponent<Rigidbody2D>().AddForce(this.Direction * this.Speed);
 
     }

@@ -5,6 +5,7 @@ public class SwerveShip : BaseShip {
 
     private bool Shooting;
     public GameObject Bullet;
+    float cooldown = .3f;
 
     // Use this for initialization
     public override void overrideStart()
@@ -28,6 +29,11 @@ public class SwerveShip : BaseShip {
             BI.OnShoot(this.transform.right, this.tag);
             this.Shooting = false;
         }
+    }
+
+    public override float getCooldown()
+    {
+        return cooldown;
     }
 
     public override void overrideOnTriggerEnter2D(Collider2D coll)

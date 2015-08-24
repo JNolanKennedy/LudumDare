@@ -73,7 +73,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: .0780000016
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b85c52c1b363344bbf2166973fdef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: {fileID: 8300000, guid: 00811968ebfb41344a8b49f2bc767d18, type: 3}
+  shootSound: {fileID: 8300000, guid: aa0da5f20f1c2fc479b39eee07846e01, type: 3}
 --- !u!212 &21255928
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -204,10 +204,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: shootSound
       value: 
-      objectReference: {fileID: 8300000, guid: 00811968ebfb41344a8b49f2bc767d18, type: 3}
+      objectReference: {fileID: 8300000, guid: aa0da5f20f1c2fc479b39eee07846e01, type: 3}
     - target: {fileID: 0}
       propertyPath: m_Volume
-      value: .0780000016
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

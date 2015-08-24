@@ -4,6 +4,7 @@ using System.Collections;
 public class DroneShipAI : AI {
 
     float cooldown = 1f;
+    float cooldownTotal = 1f;
 		
     // Update is called once per frame
 	public override void overrideUpdate()
@@ -24,6 +25,11 @@ public class DroneShipAI : AI {
     private void setCooldown()
     {
         cooldown = 10f;
+    }
+
+    public float getCoolDown()
+    {
+        return cooldownTotal;
     }
 
     public void Infect()

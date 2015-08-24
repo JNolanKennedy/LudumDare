@@ -7,6 +7,7 @@ public class ElectroShip : BaseShip
 
     private GameObject player;
     private bool Shooting;
+    float cooldown = .6f;
 
 	// Use this for initialization
 	public override void overrideStart() {
@@ -55,6 +56,10 @@ public class ElectroShip : BaseShip
         return false;
     }
 
+    public override float getCooldown()
+    {
+        return cooldown;
+    }
 	public override void overrideOnTriggerEnter2D(Collider2D coll)
 	{
 
