@@ -17,6 +17,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected bool isParasite = false;
 	protected bool hasParasite = false;
 	protected float invincibility;
+	protected int tier = 0;
 
 	public GameObject HPbar;
 	public GameObject SHbar;
@@ -213,6 +214,12 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	private void setupBars()
 	{
 
+	}
+
+	public void setSpeed(float s)
+	{
+		if (this.tier == 1)
+			this.Speed = this.Speed * s;
 	}
 
 
