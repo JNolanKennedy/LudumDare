@@ -123,8 +123,11 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		}
 
 		if (coll.tag == "Enemy" && this.tag == "PlayerShip") {
-			ShipInterface si = coll.gameObject.GetComponent(typeof(ShipInterface)) as ShipInterface;
-			si.TakeDamage(1);
+			ShipInterface si = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			si.TakeDamage (1);
+		} else if (coll.tag == "PlayerShip" && this.tag == "Enemy") {
+			ShipInterface si = coll.gameObject.GetComponent (typeof(ShipInterface)) as ShipInterface;
+			si.TakeDamage (1);
 		}
 
 		overrideOnTriggerEnter2D (coll);
