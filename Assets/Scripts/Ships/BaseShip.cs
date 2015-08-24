@@ -21,6 +21,8 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public GameObject HPbar;
 	public GameObject SHbar;
 	private bool pause;
+	private Color basecolor;
+
 
 	//RegisterSelf is used for tallying purposes in the (future) pause manager
 	void Start()
@@ -42,6 +44,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 		SHbar.transform.parent = this.transform;
 		SHbar.transform.localPosition = new Vector3 (0,-1,-1);
 		Explosion = Resources.Load ("Sounds/NESExplosion") as AudioClip;
+		basecolor = this.GetComponent<SpriteRenderer> ().color;
 	}
 	//This is the function you override by default for your own method calls during start
 	public virtual void overrideStart()
@@ -56,7 +59,7 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 				this.GetComponent<SpriteRenderer> ().color = Color.yellow;
 				this.invincibility -= Time.deltaTime;
 			} else if (this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincibility <= 0) {
-				this.GetComponent<SpriteRenderer> ().color = Color.white;
+				this.GetComponent<SpriteRenderer> ().color = basecolor;
 				this.invincibility -= Time.deltaTime;
 			}
 			overrideUpdate ();

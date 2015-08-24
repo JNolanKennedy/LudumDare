@@ -33,7 +33,7 @@ public class FastShipAI : AI {
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return cooldownTotal;
     }

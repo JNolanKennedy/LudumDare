@@ -26,6 +26,11 @@ public class BaseSpawner : MonoBehaviour {
 	}
 	public void OnDrawGizmos()
 	{
-		Gizmos.DrawIcon (transform.position, "spawnbig.png", true);
+		if (prefabSpawn != null) {
+			if (prefabSpawn.name == "basicship")
+				Gizmos.DrawIcon (transform.position, "spawnbig.png", true);
+		}
+		else
+			Gizmos.DrawIcon (transform.position, "spawnbig.png", true);
 	}
 }
