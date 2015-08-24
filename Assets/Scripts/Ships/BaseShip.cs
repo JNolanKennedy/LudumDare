@@ -16,17 +16,18 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	protected AudioSource source;
 	protected bool isParasite = false;
 	protected bool hasParasite = false;
-	protected float invincability;
+	protected float invincibility;
 
 	public GameObject HPbar;
 	public GameObject SHbar;
+	private bool pause;
 
 	//RegisterSelf is used for tallying purposes in the (future) pause manager
 	void Start()
 	{
 		HP = 1;
 		Shield = 1;
-		invincability = 0f;
+		invincibility = 0f;
 		//generic start for any future requirements
 
 		registerSelf ();
@@ -50,17 +51,18 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	void Update() {
 		//Invincability code
-		if (this.invincability > 0) {
+		if (this.invincibility > 0) {
 			this.GetComponent<SpriteRenderer> ().color = Color.yellow;
-			this.invincability -= Time.deltaTime;
-		} else if (this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincability <= 0) {
+			this.invincibility -= Time.deltaTime;
+		} else if (this.GetComponent<SpriteRenderer> ().color != Color.white && this.invincibility <= 0) {
 			this.GetComponent<SpriteRenderer> ().color = Color.white;
-			this.invincability -= Time.deltaTime;
+			this.invincibility -= Time.deltaTime;
 		}
 		if (hasParasite) {
 			this.AttatchParasite();
 		}
-		overrideUpdate ();
+		if (!pause)
+			overrideUpdate ();
 	}
 	
 	public virtual void overrideUpdate()
@@ -134,12 +136,12 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 	public virtual bool TakeDamage(int val)
 	{
 		if (this.tag == "PlayerShip") {
-			if (invincability <= 0) {
+			if (invincibility <= 0) {
 				if (this.Shield <= 0) {
 					this.Shield = 0;
 					if (this.HP > 0) {
 						this.HP -= val;
-						this.invincability = 1f;
+						this.invincibility = 1f;
 					}
 				} else {
 					this.Shield -= val;
@@ -206,6 +208,12 @@ public class BaseShip : MonoBehaviour, ShipInterface {
 
 	private void PauseHandler()
 	{
+		if (pause == false) {
+			pause = true;
+		}
+		else {
+			pause = false;
+		}
 
 	}
 }
