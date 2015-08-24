@@ -76,9 +76,11 @@ public class PlayerScript : MonoBehaviour {
 
 	private void gameOver()
 	{
+		GameObject.Find ("GameManager").GetComponent<PauseManager> ().gameOver ();
 		persistentvars vars = GameObject.Find ("PersistentVarsManager").GetComponent<persistentvars> ();
 		vars.storeLevel (Application.loadedLevel);
-		vars.loadBetween ();
+		vars.loadBetween (true);
+		Destroy (this.gameObject);
 		                                                                                   
 	}
 }

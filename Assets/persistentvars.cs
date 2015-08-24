@@ -7,6 +7,7 @@ public class persistentvars : MonoBehaviour {
 	string stringlastlevel = "";
 	string leveltext;
 	int score;
+	int deaths = 0;
 
 
 	// Use this for initialization
@@ -24,6 +25,12 @@ public class persistentvars : MonoBehaviour {
 
 	public void loadBetween ()
 	{
+		Invoke ("idontevencareanymore", 1);
+	}
+	public void loadBetween(bool death)
+	{
+		if (death)
+			deaths = deaths - 1;
 		Invoke ("idontevencareanymore", 1);
 	}
 
@@ -60,5 +67,9 @@ public class persistentvars : MonoBehaviour {
 	public string returnLevelName()
 	{
 		return stringlastlevel;
+	}
+	public int getDeaths()
+	{
+		return deaths;
 	}
 }
