@@ -91,14 +91,5 @@ public class LaserShip : BaseShip
 				this.endpoint = new Vector2 (0f, -10f);
 			}
 		}
-		
-		if (this.tag == "PlayerShip" && this.invincablity > 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.yellow;
-			this.invincablity -= Time.deltaTime;
-		}
-		else if (this.tag == "PlayerShip" && this.GetComponent<SpriteRenderer>().color != Color.white && this.invincablity <= 0) {
-			this.GetComponent<SpriteRenderer>().color = Color.white;
-			this.invincablity -= Time.deltaTime;
-		}
 	}
 }
