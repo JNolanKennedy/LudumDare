@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 100820, guid: c24a3792f88c6aa47a05fed2368d3fde, type: 2}
+  prefabSpawn: {fileID: 100820, guid: 855b14d732aeb3e478f1154971c97b2f, type: 2}
 --- !u!212 &21298514
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -108,7 +108,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: prefabSpawn
       value: 
-      objectReference: {fileID: 100820, guid: c24a3792f88c6aa47a05fed2368d3fde, type: 2}
+      objectReference: {fileID: 100820, guid: 855b14d732aeb3e478f1154971c97b2f, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
