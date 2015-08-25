@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 109322, guid: d4261cee7d69bc84094aec5b40743162, type: 2}
+  prefabSpawn: {fileID: 109322, guid: 8a1fbf8931eb3554db2828b9882cc315, type: 2}
 --- !u!212 &21246258
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -122,6 +122,10 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: prefabSpawn
+      value: 
+      objectReference: {fileID: 109322, guid: 8a1fbf8931eb3554db2828b9882cc315, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138676}

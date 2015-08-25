@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a4461773011454584f5d56a6c30ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 101424, guid: 457a3ed4dc3c95f4896364e7c34e0e7a, type: 2}
+  prefabSpawn: {fileID: 101424, guid: 2ddd2c2f9f447b341962f524e3ce0cb7, type: 2}
 --- !u!212 &21270054
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -130,6 +130,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: prefabSpawn
+      value: 
+      objectReference: {fileID: 101424, guid: 2ddd2c2f9f447b341962f524e3ce0cb7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165496}
