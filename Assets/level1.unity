@@ -1128,7 +1128,7 @@ Prefab:
     - target: {fileID: 11411702, guid: 73b5b3524d1a35e44993acfc15b0659a, type: 2}
       propertyPath: prefabSpawn
       value: 
-      objectReference: {fileID: 153346, guid: 8fedc0cac21bc414891dcc98b91ce57d, type: 2}
+      objectReference: {fileID: 148572, guid: 6dd3758a45741fc4db620e162f852aae, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73b5b3524d1a35e44993acfc15b0659a, type: 2}
   m_IsPrefabParent: 0
@@ -1519,7 +1519,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1739212158
 GameObject:
   m_ObjectHideFlags: 0
